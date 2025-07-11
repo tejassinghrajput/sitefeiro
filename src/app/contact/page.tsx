@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Mail, MessageCircle, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Clock, ShieldCheck } from 'lucide-react';
 
 import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
+import { WhatsAppIcon } from '@/components/icons';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -48,7 +49,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="block">
                   <Button variant="outline" className="w-full justify-start h-auto p-4 text-left">
-                    <MessageCircle className="h-8 w-8 text-primary mr-4 flex-shrink-0" />
+                    <WhatsAppIcon className="h-8 w-8 text-primary mr-4 flex-shrink-0" />
                     <div>
                       <p className="font-semibold">WhatsApp</p>
                       <p className="text-muted-foreground">Ping us and we’ll call you back. </p>

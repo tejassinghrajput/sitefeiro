@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, MessageCircle, Code } from "lucide-react";
+import { Menu, Code } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { ThemeSwitcher } from "@/components/theme-switcher";
+import { WhatsAppIcon } from "../icons";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -23,19 +24,10 @@ const WHATSAPP_LINK = "https://wa.me/917042107933";
 export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm"
+      "sticky top-0 z-50 w-full border-b border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-sm"
     )}>
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
@@ -62,7 +54,7 @@ export function Navbar() {
           <ThemeSwitcher />
           <Button asChild>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-4 w-4 mr-2" />
+              <WhatsAppIcon className="h-4 w-4 mr-2" />
               WhatsApp
             </a>
           </Button>
@@ -107,7 +99,7 @@ export function Navbar() {
                 ))}
                 <Button asChild className="mt-4">
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="h-4 w-4 mr-2" />
+                    <WhatsAppIcon className="h-4 w-4 mr-2" />
                     Contact on WhatsApp
                   </a>
                 </Button>

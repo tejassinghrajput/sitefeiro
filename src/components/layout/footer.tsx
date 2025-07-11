@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Code, MessageCircle, Mail, MapPin, ShieldCheck, Percent, RotateCw } from 'lucide-react';
+import { Code, Mail, MapPin, ShieldCheck, Percent, RotateCw } from 'lucide-react';
+import { WhatsAppIcon } from '../icons';
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -61,7 +62,7 @@ export function Footer() {
               <ul className="mt-4 space-y-2">
                 <li>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
-                    <MessageCircle className="h-4 w-4" />
+                    <WhatsAppIcon className="h-4 w-4" />
                     <span>WhatsApp</span>
                   </a>
                 </li>
