@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Mail, MessageCircle, Phone } from 'lucide-react';
+import { Mail, MessageCircle, Clock, ShieldCheck } from 'lucide-react';
 
 import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
@@ -35,30 +35,43 @@ export default function ContactPage() {
             </div>
             <div className="space-y-8">
               <h2 className="font-headline text-2xl font-bold">Contact Information</h2>
-              <p className="text-muted-foreground">
-                For a quick response, WhatsApp is the best way to reach us. You can also send us an email. We typically reply within a few hours.
-              </p>
+              <div className="bg-accent/10 p-6 rounded-lg">
+                  <h3 className="font-headline text-lg font-semibold flex items-center gap-2">
+                    <ShieldCheck className="h-5 w-5 text-primary" />
+                    We Respect Your Time
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    No spam. No pressure. When you contact us, we’ll ask about your needs, goals, and budget — that’s it.
+                  </p>
+              </div>
               
               <div className="space-y-4">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="block">
                   <Button variant="outline" className="w-full justify-start h-auto p-4 text-left">
-                    <MessageCircle className="h-8 w-8 text-primary mr-4" />
+                    <MessageCircle className="h-8 w-8 text-primary mr-4 flex-shrink-0" />
                     <div>
                       <p className="font-semibold">WhatsApp</p>
-                      <p className="text-muted-foreground">+91 70421 07933</p>
+                      <p className="text-muted-foreground">Ping us and we’ll call you back. </p>
                     </div>
                   </Button>
                 </a>
 
                 <a href={`mailto:${EMAIL}`} className="block">
                   <Button variant="outline" className="w-full justify-start h-auto p-4 text-left">
-                    <Mail className="h-8 w-8 text-primary mr-4" />
+                    <Mail className="h-8 w-8 text-primary mr-4 flex-shrink-0" />
                     <div>
                       <p className="font-semibold">Email</p>
                       <p className="text-muted-foreground">{EMAIL}</p>
                     </div>
                   </Button>
                 </a>
+                 <Button variant="outline" className="w-full justify-start h-auto p-4 text-left pointer-events-none">
+                    <Clock className="h-8 w-8 text-primary mr-4 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold">Typical Reply Time</p>
+                      <p className="text-muted-foreground">&lt;1 hour (9 AM to 10 PM IST)</p>
+                    </div>
+                  </Button>
               </div>
             </div>
           </div>

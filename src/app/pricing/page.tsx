@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, Handshake, ShieldCheck, ChevronRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -13,71 +13,82 @@ export const metadata: Metadata = {
 
 const packages = [
   {
+    name: 'Launch Offer',
+    price: '₹1,000*',
+    description: 'First 5 clients per month. Basic static landing page.',
+    features: [
+      '1 Page Static Landing Page',
+      'Contact / WhatsApp Button',
+      'Basic Info Section',
+      '48-Hour Delivery',
+    ],
+    cta: 'Claim Offer',
+    popular: false,
+    badge: 'Limited Time',
+    originalPrice: null
+  },
+  {
     name: 'Starter Site',
     price: '₹4,999',
     description: 'Perfect for individuals and small projects.',
     features: [
-      '3-Page Website (Home, About, Contact)',
+      '1-Page Website (e.g. Home)',
       'Responsive Design',
-      'Contact Form',
+      'Contact Form or WhatsApp',
       'Basic SEO Setup',
       '3-Day Delivery',
     ],
     cta: 'Get Started',
     popular: false,
+    originalPrice: null
   },
   {
     name: 'Business Site',
-    price: '₹9,999',
+    price: '₹7,999',
+    originalPrice: '₹9,999',
     description: 'Ideal for growing businesses and startups.',
     features: [
-      '5-Page Website',
-      'Everything in Starter',
-      'CMS Integration (for blogs, etc.)',
+      'Up to 5 Pages',
+      'Includes Gallery & Map',
+      'CMS Integration (for blogs)',
       'Advanced SEO Optimization',
       '5-Day Delivery',
     ],
     cta: 'Choose Business',
     popular: true,
+    badge: '20% OFF'
   },
   {
-    name: 'Pro Custom Site',
+    name: 'Premium Custom',
     price: '₹19,999+',
     description: 'For businesses needing custom solutions.',
     features: [
-      'Unlimited Pages',
-      'Everything in Business',
-      'E-commerce Functionality',
+      'Login/Dashboard/Admin',
+      'User Authentication',
+      'E-commerce, Bookings etc.',
       'Custom Backend Development',
       'Priority Support',
     ],
     cta: 'Contact Us',
     popular: false,
+    originalPrice: null
   },
 ];
 
-const faqs = [
-  {
-    question: 'What does "hosting" mean and is it included?',
-    answer: 'Hosting is where your website files live on the internet. We do not provide hosting, but we can deploy your website to your preferred hosting provider (like Vercel, Netlify, or a VPS) and guide you through the best options.',
-  },
-  {
-    question: 'What is the turnaround time?',
-    answer: 'Our standard delivery times are listed on each package (e.g., 3 days for Starter). This begins once we have all the necessary content and materials from you. Custom projects may have a different timeline, which we will discuss with you upfront.',
-  },
-  {
-    question: 'How does the payment process work?',
-    answer: 'We require a 50% upfront payment to begin work, with the remaining 50% due upon project completion and your approval, before we deploy the website to your hosting.',
-  },
-  {
-    question: 'Do you offer website maintenance?',
-    answer: 'Yes, we offer optional monthly maintenance packages to keep your website updated, secure, and running smoothly. Please contact us for more details on our maintenance plans.',
-  },
-  {
-    question: 'Can I provide my own design?',
-    answer: 'Absolutely! If you have a design from Figma or another tool, we can build it out for you. The Pro Custom Site package is perfect for this.',
-  },
-];
+const notes = [
+    {
+        icon: <Handshake className="h-5 w-5 text-primary flex-shrink-0" />,
+        text: 'All packages are negotiable based on your specific needs.'
+    },
+    {
+        icon: <ShieldCheck className="h-5 w-5 text-primary flex-shrink-0" />,
+        text: 'Upgrade anytime without losing your data or progress.'
+    },
+    {
+        icon: <ChevronRight className="h-5 w-5 text-primary flex-shrink-0" />,
+        text: 'Payment accepted via UPI, Razorpay, or Bank Transfer.'
+    }
+]
 
 export default function PricingPage() {
   return (
@@ -95,12 +106,12 @@ export default function PricingPage() {
 
       <section className="pb-20 md:pb-24">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-start">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:items-start">
             {packages.map((pkg) => (
-              <Card key={pkg.name} className={`flex flex-col ${pkg.popular ? 'border-primary shadow-lg' : ''}`}>
-                {pkg.popular && (
+              <Card key={pkg.name} className={`flex flex-col h-full ${pkg.popular ? 'border-primary shadow-lg' : ''}`}>
+                {(pkg.popular || pkg.badge) && (
                   <div className="bg-primary text-primary-foreground text-center py-1.5 text-sm font-semibold rounded-t-lg">
-                    Most Popular
+                    {pkg.badge || 'Most Popular'}
                   </div>
                 )}
                 <CardHeader className="text-center">
@@ -110,12 +121,15 @@ export default function PricingPage() {
                 <CardContent className="flex-grow">
                   <div className="text-center mb-6">
                     <span className="font-headline text-4xl font-bold">{pkg.price}</span>
+                    {pkg.originalPrice && (
+                        <span className="text-lg text-muted-foreground line-through ml-2">{pkg.originalPrice}</span>
+                    )}
                   </div>
                   <ul className="space-y-3">
                     {pkg.features.map((feature) => (
                       <li key={feature} className="flex items-start">
                         <Check className="h-5 w-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{feature}</span>
+                        <span className="text-muted-foreground text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -128,26 +142,32 @@ export default function PricingPage() {
               </Card>
             ))}
           </div>
+           <div className="mt-12 bg-card border rounded-lg p-6">
+             <ul className="space-y-4">
+                {notes.map((note, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                        {note.icon}
+                        <span className="text-muted-foreground">{note.text}</span>
+                    </li>
+                ))}
+             </ul>
+           </div>
         </div>
       </section>
 
       <section className="py-20 md:py-24 bg-card">
-        <div className="container mx-auto max-w-4xl px-4">
-          <div className="text-center mb-12">
+        <div className="container mx-auto max-w-4xl px-4 text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-              Frequently Asked Questions
+              Not sure which plan fits your business?
             </h2>
-          </div>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-semibold">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+              Tell us your goal & we’ll send you a custom quote within 2 hours.
+            </p>
+            <div className="mt-8">
+                <Button asChild size="lg">
+                    <Link href="/contact">Request Custom Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                </Button>
+            </div>
         </div>
       </section>
 

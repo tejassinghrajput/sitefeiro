@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Award, HeartHandshake, Zap, Compass, PencilRuler, Rocket } from 'lucide-react';
+import { Award, HeartHandshake, Zap, Compass, PencilRuler, Rocket, Briefcase, Star, IndianRupee, Globe } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -14,19 +14,19 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: <Zap className="h-8 w-8 text-primary" />,
-    title: 'Radical Speed',
-    description: "We've engineered a development process that's built for velocity. By cutting out the fluff and focusing on what matters, we get your premium website live in days, not months.",
+    icon: <IndianRupee className="h-8 w-8 text-primary" />,
+    title: '100% Indian Owned',
+    description: "Proudly based in India, we're dedicated to helping local and global businesses thrive online.",
   },
   {
     icon: <Award className="h-8 w-8 text-primary" />,
-    title: 'Uncompromising Quality',
-    description: "Speed is nothing without excellence. We use a best-in-class tech stack and adhere to the highest standards to build websites that are not just beautiful, but also robust and secure.",
+    title: '5-Star Rated Feedback',
+    description: "Our clients love our work. We're committed to excellence and it shows in our feedback.",
   },
   {
     icon: <HeartHandshake className="h-8 w-8 text-primary" />,
-    title: 'True Partnership',
-    description: "We see ourselves as an extension of your team. That means transparent communication, a collaborative spirit, and a genuine commitment to your success.",
+    title: 'Free Post-Launch Support',
+    description: "We provide 7 days of free support to ensure your website runs smoothly after it goes live.",
   },
 ];
 
@@ -48,9 +48,8 @@ const processSteps = [
     }
 ];
 
-
 const techStack = [
-  'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Genkit AI', 'Vercel', 'Figma'
+  'PHP', 'CodeIgniter', 'React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Node.js', 'Genkit AI', 'Vercel'
 ];
 
 export default function AboutPage() {
@@ -59,10 +58,10 @@ export default function AboutPage() {
       <section className="py-20 md:py-32">
         <div className="container mx-auto max-w-7xl px-4 text-center">
           <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            We're a new breed of <span className="text-primary">web agency</span>.
+            We build websites that <span className="text-primary">work</span>.
           </h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-            At BuildNGo, we're on a mission to dismantle the old, slow, and expensive way of building websites. We combine technical expertise with a passion for efficiency to help visionaries, founders, and businesses get online, faster than ever.
+             BuildNGo was founded by Tejas Kumar Singh, a full-stack web developer passionate about helping Indian & global small businesses go online quickly, professionally, and affordably.
           </p>
         </div>
       </section>
@@ -71,22 +70,22 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
             <div className="order-2 md:order-1">
-              <h2 className="font-headline text-3xl font-bold tracking-tight">Our Origin Story</h2>
+              <h2 className="font-headline text-3xl font-bold tracking-tight">Our Journey</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Hello, I'm the founder of BuildNGo. With a background in Computer Science and years of professional experience building complex applications with PHP, React, and Node.js, I've seen the good, the bad, and the ugly of the web development industry.
+                We noticed a gap in the market: agencies were too expensive for small businesses, and freelancers were often inconsistent. So we stepped in with a simple promise: <br/> <strong className="text-foreground">"We deliver professional websites that work — in days, not weeks."</strong>
               </p>
               <p className="mt-4 text-muted-foreground">
-                Too often, I saw talented entrepreneurs and small businesses with brilliant ideas held back by the same frustrating hurdles: web development that was painfully slow, prohibitively expensive, and needlessly complicated. The traditional agency model felt broken, designed for large corporations, not for the agile and ambitious.
+                Founded in 2021, BuildNGo started with a mission to empower entrepreneurs. We've seen brilliant ideas held back by slow, expensive, and complicated web development. The traditional model felt broken, catering only to large corporations.
               </p>
               <p className="mt-4 text-muted-foreground">
-                BuildNGo is my answer to that problem. I created it to be everything I wished for as a client: a service that is incredibly fast, transparently priced, and relentlessly focused on quality. By leveraging a modern, standardized tech stack and a streamlined process, we eliminate the bottlenecks and deliver exceptional websites in a fraction of the time. Our goal isn't just to build sites; it's to empower you to make your mark on the world.
+                BuildNGo is our answer. We created it to be everything we wished for as a client: incredibly fast, transparently priced, and relentlessly focused on quality. By leveraging a modern tech stack and a streamlined process, we eliminate bottlenecks and deliver exceptional websites in a fraction of the time. Our goal isn't just to build sites; it's to help you make your mark on the world.
               </p>
               <Button asChild className="mt-6">
                 <Link href="/contact">Let's Build Together</Link>
               </Button>
             </div>
-            <div className="order-1 md:order-2">
-                <FounderPortraitIcon className="w-full h-auto rounded-lg shadow-lg" data-ai-hint="developer portrait" />
+            <div className="order-1 md:order-2 flex justify-center">
+                <FounderPortraitIcon className="w-full max-w-md h-auto rounded-lg shadow-lg" data-ai-hint="developer portrait" />
             </div>
           </div>
         </div>
@@ -114,45 +113,44 @@ export default function AboutPage() {
         </div>
       </section>
       
-      <section className="py-20 md:py-24">
+       <section className="py-20 md:py-24">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Streamlined Process</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              We've perfected a simple, transparent process to take your idea from concept to launch with speed and precision.
-            </p>
-          </div>
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-              {processSteps.map((step) => (
-                  <Card key={step.title} className="text-center p-6">
-                      <CardHeader className="items-center">
-                          {step.icon}
-                          <CardTitle className="mt-4 font-headline text-xl">{step.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                          <p className="text-muted-foreground">{step.description}</p>
-                      </CardContent>
-                  </Card>
-              ))}
-          </div>
-        </div>
-      </section>
-
-       <section className="py-20 md:py-24 bg-card">
-        <div className="container mx-auto max-w-7xl px-4">
-          <div className="text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Technology Stack</h2>
-            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-              We don't just use modern tools; we've carefully selected a powerful, integrated stack that enables us to build high-performance, scalable, and secure websites efficiently. This isn't just a list of logos—it's our secret sauce for delivering quality at speed.
-            </p>
-          </div>
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            {techStack.map((tech) => (
-              <Badge key={tech} variant="secondary" className="text-lg px-4 py-2 rounded-md">
-                {tech}
-              </Badge>
-            ))}
-          </div>
+            <div className="text-center">
+                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Experience & Technology</h2>
+                <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+                    Our experience and carefully selected tech stack are our secret sauce for delivering quality at speed.
+                </p>
+            </div>
+            <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
+                <div className="text-center">
+                    <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
+                        <Briefcase className="h-8 w-8 text-primary"/>
+                    </div>
+                    <h3 className="mt-6 font-headline text-xl font-bold">Developer since 2021</h3>
+                    <p className="mt-2 text-muted-foreground">Delivered landing pages, admin panels, e-commerce MVPs, portfolio sites, and booking systems.</p>
+                </div>
+                <div className="text-center">
+                    <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
+                        <Globe className="h-8 w-8 text-primary"/>
+                    </div>
+                    <h3 className="mt-6 font-headline text-xl font-bold">Global Clientele</h3>
+                    <p className="mt-2 text-muted-foreground">Based in India with happy clients across the UK, and UAE.</p>
+                </div>
+                <div className="text-center">
+                    <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
+                        <Rocket className="h-8 w-8 text-primary"/>
+                    </div>
+                    <h3 className="mt-6 font-headline text-xl font-bold">Powerful Tech Stack</h3>
+                     <p className="mt-2 text-muted-foreground">Using modern, reliable technologies to build high-performance websites.</p>
+                </div>
+            </div>
+            <div className="mt-12 flex flex-wrap justify-center gap-4">
+                {techStack.map((tech) => (
+                    <Badge key={tech} variant="secondary" className="text-base px-4 py-2 rounded-md">
+                        {tech}
+                    </Badge>
+                ))}
+            </div>
         </div>
       </section>
     </div>

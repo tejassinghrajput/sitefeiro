@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Code, MessageCircle, Mail, MapPin } from 'lucide-react';
+import { Code, MessageCircle, Mail, MapPin, ShieldCheck, Percent, RotateCw } from 'lucide-react';
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -9,6 +9,22 @@ const navLinks = [
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
 ];
+
+const policyLinks = [
+    {
+      icon: <ShieldCheck className="h-4 w-4" />,
+      text: "Pay only when satisfied (first-time clients)",
+    },
+    {
+      icon: <Percent className="h-4 w-4" />,
+      text: "50% upfront for large projects",
+    },
+    {
+      icon: <RotateCw className="h-4 w-4" />,
+      text: "Free fixes for 7 days post-delivery",
+    },
+];
+
 
 const WHATSAPP_LINK = "https://wa.me/917042107933";
 const EMAIL = "sittefeiro@gmail.com";
@@ -27,7 +43,7 @@ export function Footer() {
               Fast, affordable, and SEO-ready websites delivered in days.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-2">
+          <div className="grid grid-cols-2 gap-8 md:col-span-2 md:grid-cols-3">
             <div>
               <h3 className="font-headline text-sm font-semibold tracking-wider text-foreground">Navigate</h3>
               <ul className="mt-4 space-y-2">
@@ -63,10 +79,21 @@ export function Footer() {
                 </li>
               </ul>
             </div>
+            <div>
+              <h3 className="font-headline text-sm font-semibold tracking-wider text-foreground">Policies</h3>
+               <ul className="mt-4 space-y-3">
+                {policyLinks.map((link, index) => (
+                  <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    {link.icon}
+                    <span>{link.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <div className="md:col-span-1">
             <h3 className="font-headline text-sm font-semibold tracking-wider text-foreground">Stay Updated</h3>
-            <p className="mt-4 text-sm text-muted-foreground">Subscribe to our newsletter for the latest updates.</p>
+            <p className="mt-4 text-sm text-muted-foreground">No spam. Just updates on our latest offers and features.</p>
             <form className="mt-4 flex gap-2">
               <Input type="email" placeholder="Enter your email" className="flex-1" />
               <Button type="submit">Subscribe</Button>
@@ -74,7 +101,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} BuildNGo. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} BuildNGo. All Rights Reserved. No hidden fees — ever.</p>
         </div>
       </div>
     </footer>
