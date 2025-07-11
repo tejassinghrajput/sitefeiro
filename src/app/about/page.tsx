@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { FounderPortraitIcon } from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { WaveDivider } from '@/components/wave-divider';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -57,10 +58,10 @@ export default function AboutPage() {
     <div className="bg-background text-foreground">
       <section className="py-20 md:py-32">
         <div className="container mx-auto max-w-7xl px-4 text-center">
-          <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+          <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl animate-fade-in-up">
             We build websites that <span className="text-primary">work</span>.
           </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
+          <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl animate-fade-in-up [animation-delay:200ms]">
              BuildNGo was founded by Tejas Kumar Singh, a full-stack web developer passionate about helping Indian & global small businesses go online quickly, professionally, and affordably.
           </p>
         </div>
@@ -69,7 +70,7 @@ export default function AboutPage() {
       <section className="pb-20 md:pb-32">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
-            <div className="order-2 md:order-1">
+            <div className="order-2 md:order-1 animate-fade-in-up">
               <h2 className="font-headline text-3xl font-bold tracking-tight">Our Journey</h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 We noticed a gap in the market: agencies were too expensive for small businesses, and freelancers were often inconsistent. So we stepped in with a simple promise: <br/> <strong className="text-foreground">"We deliver professional websites that work — in days, not weeks."</strong>
@@ -80,28 +81,30 @@ export default function AboutPage() {
               <p className="mt-4 text-muted-foreground">
                 BuildNGo is our answer. We created it to be everything we wished for as a client: incredibly fast, transparently priced, and relentlessly focused on quality. By leveraging a modern tech stack and a streamlined process, we eliminate bottlenecks and deliver exceptional websites in a fraction of the time. Our goal isn't just to build sites; it's to help you make your mark on the world.
               </p>
-              <Button asChild className="mt-6 transition-transform hover:scale-105">
+              <Button asChild className="mt-6 transition-transform hover:scale-105 bg-gradient-to-r from-primary to-orange-500 text-white">
                 <Link href="/contact">Let's Build Together</Link>
               </Button>
             </div>
-            <div className="order-1 md:order-2 flex justify-center">
-                <FounderPortraitIcon className="w-full max-w-md h-auto rounded-lg shadow-lg" data-ai-hint="developer portrait" />
+            <div className="order-1 md:order-2 flex justify-center animate-fade-in-up [animation-delay:200ms]">
+                <FounderPortraitIcon className="w-full max-w-md h-auto rounded-lg shadow-lg transition-transform hover:scale-105" data-ai-hint="developer portrait" />
             </div>
           </div>
         </div>
       </section>
+      
+      <WaveDivider />
 
       <section className="py-20 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="text-center">
+          <div className="text-center animate-fade-in-up">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Core Philosophy</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
               These are the principles that guide every project we undertake.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-            {values.map((value) => (
-              <div key={value.title} className="text-center">
+            {values.map((value, i) => (
+              <div key={value.title} className="text-center transition-transform hover:scale-105 animate-fade-in-up" style={{ animationDelay: `${i * 150}ms`}}>
                 <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                   {value.icon}
                 </div>
@@ -115,7 +118,7 @@ export default function AboutPage() {
 
       <section className="py-20 md:py-24">
             <div className="container mx-auto max-w-4xl px-4">
-                <div className="text-center mb-16">
+                <div className="text-center mb-16 animate-fade-in-up">
                     <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Simple 3-Step Process</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
                         From idea to launch, we make it easy and transparent.
@@ -124,7 +127,7 @@ export default function AboutPage() {
                 <div className="relative">
                     <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
                     {processSteps.map((step, index) => (
-                        <div key={step.title} className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                        <div key={step.title} className={`relative mb-12 flex items-center animate-fade-in-up ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`} style={{ animationDelay: `${index * 150}ms`}}>
                             <div className="hidden md:block w-1/2"></div>
                             <div className="hidden md:block">
                                 <div className="h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
@@ -150,28 +153,28 @@ export default function AboutPage() {
       
        <section className="py-20 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
-            <div className="text-center">
+            <div className="text-center animate-fade-in-up">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Experience & Technology</h2>
                 <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
                     Our experience and carefully selected tech stack are our secret sauce for delivering quality at speed.
                 </p>
             </div>
             <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
-                <div className="text-center">
+                <div className="text-center animate-fade-in-up [animation-delay:100ms]">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Briefcase className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="mt-6 font-headline text-xl font-bold">Developer since 2021</h3>
                     <p className="mt-2 text-muted-foreground">Delivered landing pages, admin panels, e-commerce MVPs, portfolio sites, and booking systems.</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center animate-fade-in-up [animation-delay:200ms]">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Globe className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="mt-6 font-headline text-xl font-bold">Global Clientele</h3>
                     <p className="mt-2 text-muted-foreground">Based in India with happy clients across the UK, and UAE.</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center animate-fade-in-up [animation-delay:300ms]">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Rocket className="h-8 w-8 text-primary"/>
                     </div>
@@ -179,7 +182,7 @@ export default function AboutPage() {
                      <p className="mt-2 text-muted-foreground">Using modern, reliable technologies to build high-performance websites.</p>
                 </div>
             </div>
-            <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <div className="mt-12 flex flex-wrap justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
                 {techStack.map((tech) => (
                     <Badge key={tech} variant="secondary" className="text-base px-4 py-2 rounded-md transition-transform hover:scale-110">
                         {tech}

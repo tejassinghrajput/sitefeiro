@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Check, ArrowRight, Handshake, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Check, ArrowRight, Handshake, ShieldCheck, ChevronRight, Sparkles } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,7 +24,7 @@ const packages = [
     ],
     cta: 'Claim Offer',
     popular: false,
-    badge: 'Limited Time',
+    badgeText: '🔥 Limited Time',
     originalPrice: null
   },
   {
@@ -40,6 +40,7 @@ const packages = [
     ],
     cta: 'Get Started',
     popular: false,
+    badgeText: null,
     originalPrice: null
   },
   {
@@ -56,7 +57,7 @@ const packages = [
     ],
     cta: 'Choose Business',
     popular: true,
-    badge: '20% OFF'
+    badgeText: '🎉 20% OFF'
   },
   {
     name: 'Premium Custom',
@@ -71,6 +72,7 @@ const packages = [
     ],
     cta: 'Contact Us',
     popular: false,
+    badgeText: null,
     originalPrice: null
   },
 ];
@@ -108,10 +110,10 @@ export default function PricingPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:items-start">
             {packages.map((pkg) => (
-              <Card key={pkg.name} className={`flex flex-col h-full ${pkg.popular ? 'border-primary shadow-lg' : ''}`}>
-                {(pkg.popular || pkg.badge) && (
-                  <div className="bg-primary text-primary-foreground text-center py-1.5 text-sm font-semibold rounded-t-lg">
-                    {pkg.badge || 'Most Popular'}
+              <Card key={pkg.name} className={`flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:scale-105 ${pkg.popular ? 'border-2 border-primary shadow-lg' : ''}`}>
+                {(pkg.popular || pkg.badgeText) && (
+                  <div className={`text-center py-2 text-sm font-semibold rounded-t-lg ${pkg.popular ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'}`}>
+                    {pkg.badgeText || 'Most Popular'}
                   </div>
                 )}
                 <CardHeader className="text-center">
@@ -135,7 +137,7 @@ export default function PricingPage() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild className="w-full" variant={pkg.popular ? 'default' : 'outline'}>
+                  <Button asChild className={`w-full ${pkg.popular ? 'bg-gradient-to-r from-primary to-orange-500 text-white' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
                     <Link href="/contact">{pkg.cta}</Link>
                   </Button>
                 </CardFooter>
@@ -164,7 +166,7 @@ export default function PricingPage() {
               Tell us your goal & we’ll send you a custom quote within 2 hours.
             </p>
             <div className="mt-8">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="bg-gradient-to-r from-primary to-orange-500 text-white transition-transform hover:scale-105">
                     <Link href="/contact">Request Custom Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
                 </Button>
             </div>
@@ -178,7 +180,7 @@ export default function PricingPage() {
             We're here to help. Reach out and let's discuss your project.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="transition-transform hover:scale-105">
               <Link href="/contact">Contact Us <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
