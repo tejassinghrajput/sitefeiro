@@ -43,30 +43,6 @@ const services = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "Aarav Sharma",
-    role: "Founder, TechSolutions",
-    quote: "Incredible speed and quality! BuildNGo delivered our new website in just three days, and it exceeded all our expectations. The process was seamless and highly professional.",
-    avatar: "https://placehold.co/40x40.png",
-    hint: "man portrait"
-  },
-  {
-    name: "Priya Singh",
-    role: "Marketing Head, Creative Co.",
-    quote: "The team's attention to detail and understanding of our brand was impressive. Our new site is not only beautiful but also incredibly fast. Highly recommended!",
-    avatar: "https://placehold.co/40x40.png",
-    hint: "woman portrait"
-  },
-  {
-    name: "Rohan Verma",
-    role: "CEO, Innovate Startups",
-    quote: "I was skeptical about the 3-day promise, but they delivered. The pricing is unbeatable for the quality you get. A game-changer for startups on a budget.",
-    avatar: "https://placehold.co/40x40.png",
-    hint: "man smiling"
-  },
-];
-
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -129,51 +105,6 @@ export default function Home() {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="testimonials" className="py-16 md:py-24">
-        <div className="container mx-auto max-w-7xl px-4">
-           <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">What Our Clients Say</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              We're trusted by founders and businesses across India.
-            </p>
-          </div>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1 h-full">
-                    <Card className="h-full flex flex-col">
-                      <CardContent className="pt-6 flex-grow">
-                        <Quote className="h-8 w-8 text-muted-foreground mb-4" />
-                        <p className="text-muted-foreground">{testimonial.quote}</p>
-                      </CardContent>
-                      <CardFooter className="flex items-center gap-4 mt-auto">
-                        <Avatar>
-                          <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
-                          <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <p className="font-semibold">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                        </div>
-                      </CardFooter>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex" />
-            <CarouselNext className="hidden sm:flex"/>
-          </Carousel>
         </div>
       </section>
 
