@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { ECommerceIcon, CorporateWebsiteIcon, PortfolioShowcaseIcon, SaasLandingPageIcon } from "@/components/icons";
 
 const features = [
   {
@@ -46,22 +47,22 @@ const services = [
 const portfolio = [
   {
     title: "E-commerce Store",
-    image: "https://placehold.co/600x400.png",
+    icon: <ECommerceIcon className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />,
     hint: "online shop",
   },
   {
     title: "Corporate Website",
-    image: "https://placehold.co/600x400.png",
+    icon: <CorporateWebsiteIcon className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />,
     hint: "business site",
   },
   {
     title: "Portfolio Showcase",
-    image: "https://placehold.co/600x400.png",
+    icon: <PortfolioShowcaseIcon className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />,
     hint: "creative portfolio",
   },
   {
     title: "SaaS Landing Page",
-    image: "https://placehold.co/600x400.png",
+    icon: <SaasLandingPageIcon className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />,
     hint: "software startup",
   },
 ];
@@ -95,13 +96,13 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="bg-background py-20 md:py-32">
         <div className="container mx-auto max-w-7xl px-4 text-center">
-          <h1 className="font-headline text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="font-headline text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up">
             We build websites in <span className="text-primary">3 days</span>
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl">
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl animate-fade-in-up [animation-delay:200ms]">
             Fast. Affordable. SEO-Ready. Starting at just <span className="font-semibold text-foreground">₹4,999</span>.
           </p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
             <Button asChild size="lg">
               <Link href="/pricing">View Pricing</Link>
             </Button>
@@ -115,8 +116,8 @@ export default function Home() {
       <section id="features" className="py-16 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.title} className="flex flex-col items-center text-center">
+            {features.map((feature, i) => (
+              <div key={feature.title} className="flex flex-col items-center text-center animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
                 {feature.icon}
                 <h3 className="mt-4 font-headline text-xl font-bold">{feature.title}</h3>
                 <p className="mt-2 text-muted-foreground">{feature.description}</p>
@@ -135,8 +136,8 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {services.map((service) => (
-              <Card key={service.title} className="flex flex-col">
+            {services.map((service, i) => (
+              <Card key={service.title} className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
                   <CardDescription>{service.description}</CardDescription>
@@ -164,12 +165,12 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {portfolio.map((item) => (
-              <Card key={item.title} className="overflow-hidden group">
-                <div className="aspect-w-16 aspect-h-9 overflow-hidden">
-                  <Image src={item.image} alt={item.title} width={600} height={400} data-ai-hint={item.hint} className="object-cover transition-transform duration-300 group-hover:scale-105" />
+            {portfolio.map((item, i) => (
+              <Card key={item.title} className="overflow-hidden group animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
+                <div className="aspect-[4/3] bg-muted overflow-hidden">
+                  {item.icon}
                 </div>
-                <CardContent className="p-4">
+                <CardContent className="p-4 bg-background">
                   <h3 className="font-semibold">{item.title}</h3>
                 </CardContent>
               </Card>
@@ -196,13 +197,13 @@ export default function Home() {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
+                  <div className="p-1 h-full">
                     <Card className="h-full flex flex-col">
                       <CardContent className="pt-6 flex-grow">
                         <Quote className="h-8 w-8 text-muted-foreground mb-4" />
                         <p className="text-muted-foreground">{testimonial.quote}</p>
                       </CardContent>
-                      <CardFooter className="flex items-center gap-4">
+                      <CardFooter className="flex items-center gap-4 mt-auto">
                         <Avatar>
                           <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
                           <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
@@ -230,7 +231,7 @@ export default function Home() {
             Let's build your online presence, together. Get started today.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg" variant="secondary">
+            <Button asChild size="lg" variant="secondary" className="transition-transform hover:scale-105">
               <Link href="/contact">Get Your Site Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>

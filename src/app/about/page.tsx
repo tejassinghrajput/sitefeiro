@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, BrainCircuit, HeartHandshake, Zap, CheckCircle } from 'lucide-react';
+import { Award, HeartHandshake, Zap } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { FounderPortraitIcon } from '@/components/icons';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -63,14 +64,7 @@ export default function AboutPage() {
               </Button>
             </div>
             <div className="order-1 md:order-2">
-                <Image
-                    src="https://placehold.co/600x600.png"
-                    alt="Founder of BuildNGo"
-                    data-ai-hint="developer portrait"
-                    width={600}
-                    height={600}
-                    className="rounded-lg shadow-lg"
-                />
+                <FounderPortraitIcon className="w-full h-auto rounded-lg shadow-lg" data-ai-hint="developer portrait" />
             </div>
           </div>
         </div>

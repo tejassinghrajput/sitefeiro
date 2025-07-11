@@ -6,7 +6,6 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 
 const Sheet = SheetPrimitive.Root
 
@@ -106,14 +105,12 @@ SheetFooter.displayName = "SheetFooter"
 const SheetTitle = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
->(({ className, children, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <SheetPrimitive.Title
     ref={ref}
     className={cn("text-lg font-semibold text-foreground", className)}
     {...props}
-  >
-    {children}
-  </SheetPrimitive.Title>
+  />
 ))
 SheetTitle.displayName = SheetPrimitive.Title.displayName
 

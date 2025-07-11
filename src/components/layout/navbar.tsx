@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -47,18 +48,17 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
+          <ThemeSwitcher />
           <Button asChild>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-4 w-4 mr-2" />
               WhatsApp
             </a>
           </Button>
-          <Button asChild variant="outline">
-            <Link href="/pricing">View Pricing</Link>
-          </Button>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeSwitcher />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -68,7 +68,7 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[240px]">
               <SheetHeader>
-                <SheetTitle>
+                 <SheetTitle>
                   <VisuallyHidden>Navigation Menu</VisuallyHidden>
                 </SheetTitle>
               </SheetHeader>
