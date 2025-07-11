@@ -1,49 +1,68 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { Award, HeartHandshake, Zap } from 'lucide-react';
+import { Award, HeartHandshake, Zap, Compass, PencilRuler, Rocket } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { FounderPortraitIcon } from '@/components/icons';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about the story, mission, and values behind BuildNGo. Discover why we are passionate about building fast, high-quality websites.',
+  description: 'Discover the story, mission, and values behind BuildNGo. Learn why we are passionate about building fast, high-quality websites that empower businesses and creators.',
 };
 
 const values = [
   {
     icon: <Zap className="h-8 w-8 text-primary" />,
-    title: 'Speed & Efficiency',
-    description: "We've optimized our process to deliver high-quality websites in record time, so you can launch faster.",
+    title: 'Radical Speed',
+    description: "We've engineered a development process that's built for velocity. By cutting out the fluff and focusing on what matters, we get your premium website live in days, not months.",
   },
   {
     icon: <Award className="h-8 w-8 text-primary" />,
     title: 'Uncompromising Quality',
-    description: "Fast doesn't mean cutting corners. We use modern technologies to build robust, scalable, and beautiful websites.",
+    description: "Speed is nothing without excellence. We use a best-in-class tech stack and adhere to the highest standards to build websites that are not just beautiful, but also robust and secure.",
   },
   {
     icon: <HeartHandshake className="h-8 w-8 text-primary" />,
-    title: 'Transparent Communication',
-    description: "We believe in clear, honest communication. You'll be kept in the loop throughout the entire process.",
+    title: 'True Partnership',
+    description: "We see ourselves as an extension of your team. That means transparent communication, a collaborative spirit, and a genuine commitment to your success.",
   },
 ];
 
+const processSteps = [
+    {
+        icon: <Compass className="h-10 w-10 text-primary" />,
+        title: "1. Discovery & Strategy",
+        description: "We start by diving deep into your vision, goals, and audience. We'll define the project scope and create a clear roadmap for success.",
+    },
+    {
+        icon: <PencilRuler className="h-10 w-10 text-primary" />,
+        title: "2. Design & Development",
+        description: "This is where the magic happens. Our team gets to work, building your website with clean code, modern design, and a sharp eye for detail.",
+    },
+    {
+        icon: <Rocket className="h-10 w-10 text-primary" />,
+        title: "3. Review & Launch",
+        description: "We'll present the finished website for your feedback. After final approvals, we handle the deployment and celebrate your successful launch!",
+    }
+];
+
+
 const techStack = [
-  'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PHP', 'Firebase', 'GCP', 'Vercel', 'Figma'
+  'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Genkit AI', 'Vercel', 'Figma'
 ];
 
 export default function AboutPage() {
   return (
-    <div className="bg-background">
+    <div className="bg-background text-foreground">
       <section className="py-20 md:py-32">
         <div className="container mx-auto max-w-7xl px-4 text-center">
           <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-            Driven by Passion, Defined by <span className="text-primary">Quality</span>.
+            We're a new breed of <span className="text-primary">web agency</span>.
           </h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-            BuildNGo was born from a simple idea: professional web design should be fast, affordable, and accessible to everyone. We're here to turn your vision into a digital reality, without the usual hassle.
+            At BuildNGo, we're on a mission to dismantle the old, slow, and expensive way of building websites. We combine technical expertise with a passion for efficiency to help visionaries, founders, and businesses get online, faster than ever.
           </p>
         </div>
       </section>
@@ -52,12 +71,15 @@ export default function AboutPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20">
             <div className="order-2 md:order-1">
-              <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground">Our Story</h2>
-              <p className="mt-4 text-muted-foreground">
-                As a Computer Science graduate with years of hands-on experience in PHP, React, and Node.js, I noticed a common problem: businesses and individuals struggled with slow, expensive, and complicated website development processes.
+              <h2 className="font-headline text-3xl font-bold tracking-tight">Our Origin Story</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Hello, I'm the founder of BuildNGo. With a background in Computer Science and years of professional experience building complex applications with PHP, React, and Node.js, I've seen the good, the bad, and the ugly of the web development industry.
               </p>
               <p className="mt-4 text-muted-foreground">
-                I founded BuildNGo to solve this. By standardizing the development process and using a modern, efficient tech stack, we can build and launch stunning, high-performance websites in just a few days. Our goal is to empower creators and entrepreneurs by giving them the high-quality online presence they deserve, quickly and affordably.
+                Too often, I saw talented entrepreneurs and small businesses with brilliant ideas held back by the same frustrating hurdles: web development that was painfully slow, prohibitively expensive, and needlessly complicated. The traditional agency model felt broken, designed for large corporations, not for the agile and ambitious.
+              </p>
+              <p className="mt-4 text-muted-foreground">
+                BuildNGo is my answer to that problem. I created it to be everything I wished for as a client: a service that is incredibly fast, transparently priced, and relentlessly focused on quality. By leveraging a modern, standardized tech stack and a streamlined process, we eliminate the bottlenecks and deliver exceptional websites in a fraction of the time. Our goal isn't just to build sites; it's to empower you to make your mark on the world.
               </p>
               <Button asChild className="mt-6">
                 <Link href="/contact">Let's Build Together</Link>
@@ -73,12 +95,12 @@ export default function AboutPage() {
       <section className="py-20 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Why Choose BuildNGo?</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Core Philosophy</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              We're more than just developers. We're your partners in digital growth.
+              These are the principles that guide every project we undertake.
             </p>
           </div>
-          <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value) => (
               <div key={value.title} className="text-center">
                 <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
@@ -91,18 +113,42 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-       <section className="py-20 md:py-24">
+      
+      <section className="py-20 md:py-24">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center">
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Technology Stack</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Streamlined Process</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              We use the best tools in the industry to build your website.
+              We've perfected a simple, transparent process to take your idea from concept to launch with speed and precision.
+            </p>
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+              {processSteps.map((step) => (
+                  <Card key={step.title} className="text-center p-6">
+                      <CardHeader className="items-center">
+                          {step.icon}
+                          <CardTitle className="mt-4 font-headline text-xl">{step.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                          <p className="text-muted-foreground">{step.description}</p>
+                      </CardContent>
+                  </Card>
+              ))}
+          </div>
+        </div>
+      </section>
+
+       <section className="py-20 md:py-24 bg-card">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="text-center">
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Technology Stack</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+              We don't just use modern tools; we've carefully selected a powerful, integrated stack that enables us to build high-performance, scalable, and secure websites efficiently. This isn't just a list of logos—it's our secret sauce for delivering quality at speed.
             </p>
           </div>
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             {techStack.map((tech) => (
-              <Badge key={tech} variant="secondary" className="text-lg px-4 py-2">
+              <Badge key={tech} variant="secondary" className="text-lg px-4 py-2 rounded-md">
                 {tech}
               </Badge>
             ))}
