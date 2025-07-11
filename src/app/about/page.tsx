@@ -81,7 +81,7 @@ export default function AboutPage() {
               <p className="mt-4 text-muted-foreground">
                 BuildNGo is our answer. We created it to be everything we wished for as a client: incredibly fast, transparently priced, and relentlessly focused on quality. By leveraging a modern tech stack and a streamlined process, we eliminate bottlenecks and deliver exceptional websites in a fraction of the time. Our goal isn't just to build sites; it's to help you make your mark on the world.
               </p>
-              <Button asChild className="mt-6 transition-transform hover:scale-105 bg-gradient-to-r from-primary to-orange-500 text-white">
+              <Button asChild className="mt-6 transition-transform hover:scale-105 bg-gradient-to-r from-primary to-orange-500 text-white" size="lg">
                 <Link href="/contact">Let's Build Together</Link>
               </Button>
             </div>

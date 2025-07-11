@@ -25,7 +25,8 @@ const packages = [
     cta: 'Claim Offer',
     popular: false,
     badgeText: '🔥 Limited Time',
-    originalPrice: null
+    originalPrice: null,
+    gradientButton: true,
   },
   {
     name: 'Starter Site',
@@ -41,7 +42,8 @@ const packages = [
     cta: 'Get Started',
     popular: false,
     badgeText: null,
-    originalPrice: null
+    originalPrice: null,
+    gradientButton: false,
   },
   {
     name: 'Business Site',
@@ -57,7 +59,8 @@ const packages = [
     ],
     cta: 'Choose Business',
     popular: true,
-    badgeText: '🎉 20% OFF'
+    badgeText: '🎉 20% OFF',
+    gradientButton: true,
   },
   {
     name: 'Premium Custom',
@@ -73,7 +76,8 @@ const packages = [
     cta: 'Contact Us',
     popular: false,
     badgeText: null,
-    originalPrice: null
+    originalPrice: null,
+    gradientButton: false,
   },
 ];
 
@@ -137,7 +141,7 @@ export default function PricingPage() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild className={`w-full ${pkg.popular ? 'bg-gradient-to-r from-primary to-orange-500 text-white' : ''}`} variant={pkg.popular ? 'default' : 'outline'}>
+                  <Button asChild className={`w-full ${pkg.gradientButton ? 'bg-gradient-to-r from-primary to-orange-500 text-white' : ''}`} variant={pkg.gradientButton ? 'default' : 'outline'}>
                     <Link href="/contact">{pkg.cta}</Link>
                   </Button>
                 </CardFooter>

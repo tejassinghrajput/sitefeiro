@@ -96,7 +96,7 @@ export function Footer() {
             <p className="mt-4 text-sm text-muted-foreground">No spam. Just updates on our latest offers and features.</p>
             <form className="mt-4 flex gap-2">
               <Input type="email" placeholder="Enter your email" className="flex-1" />
-              <Button type="submit">Subscribe</Button>
+              <Button type="submit" className="bg-gradient-to-r from-primary to-orange-500 text-white">Subscribe</Button>
             </form>
           </div>
         </div>

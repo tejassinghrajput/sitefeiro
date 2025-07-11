@@ -112,7 +112,7 @@ export function ContactForm() {
                 </FormControl>
                 <SelectContent>
                   <SelectItem value="Starter (₹4,999)">Starter (₹4,999)</SelectItem>
-                  <SelectItem value="Business (₹9,999)">Business (₹9,999)</SelectItem>
+                  <SelectItem value="Business (₹9,999)">Business (₹7,999)</SelectItem>
                   <SelectItem value="Pro (₹19,999+)">Pro (₹19,999+)</SelectItem>
                   <SelectItem value="Not Sure">Not Sure</SelectItem>
                 </SelectContent>
@@ -138,7 +138,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
+        <Button type="submit" disabled={form.formState.isSubmitting} className="w-full bg-gradient-to-r from-primary to-orange-500 text-white">
           {form.formState.isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Send Message
         </Button>

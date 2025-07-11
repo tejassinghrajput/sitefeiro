@@ -91,7 +91,7 @@ export default function Home() {
             </CardContent>
             <CardFooter className="flex-col gap-4 pb-8">
               <p className="font-bold text-primary text-lg">👉 Limited slots — Book yours now!</p>
-              <Button asChild size="lg" className="transition-transform hover:scale-105 bg-gradient-to-r from-orange-500 to-amber-500 text-white">
+              <Button asChild size="lg" className="transition-transform hover:scale-105 bg-gradient-to-r from-primary to-orange-500 text-white">
                 <Link href="/pricing">Claim This Deal</Link>
               </Button>
             </CardFooter>
@@ -178,7 +178,7 @@ export default function Home() {
               <Badge variant="destructive" className="hidden md:inline-flex">Offer valid till {endOfMonth}</Badge>
             </div>
             <div className="flex gap-2">
-              <Button asChild variant="secondary" className="transition-transform hover:scale-105">
+              <Button asChild variant="secondary" className="transition-transform hover:scale-105 text-primary">
                   <Link href="/pricing">Book Now</Link>
               </Button>
             </div>
