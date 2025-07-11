@@ -80,7 +80,7 @@ export default function AboutPage() {
               <p className="mt-4 text-muted-foreground">
                 BuildNGo is our answer. We created it to be everything we wished for as a client: incredibly fast, transparently priced, and relentlessly focused on quality. By leveraging a modern tech stack and a streamlined process, we eliminate bottlenecks and deliver exceptional websites in a fraction of the time. Our goal isn't just to build sites; it's to help you make your mark on the world.
               </p>
-              <Button asChild className="mt-6">
+              <Button asChild className="mt-6 transition-transform hover:scale-105">
                 <Link href="/contact">Let's Build Together</Link>
               </Button>
             </div>
@@ -112,8 +112,43 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-20 md:py-24">
+            <div className="container mx-auto max-w-4xl px-4">
+                <div className="text-center mb-16">
+                    <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Simple 3-Step Process</h2>
+                    <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                        From idea to launch, we make it easy and transparent.
+                    </p>
+                </div>
+                <div className="relative">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
+                    {processSteps.map((step, index) => (
+                        <div key={step.title} className={`relative mb-12 flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                            <div className="hidden md:block w-1/2"></div>
+                            <div className="hidden md:block">
+                                <div className="h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
+                            </div>
+                            <div className="w-full md:w-1/2">
+                                <Card className="p-6 transition-transform hover:scale-105 hover:shadow-lg">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex justify-center items-center h-12 w-12 bg-primary/10 rounded-lg flex-shrink-0">
+                                            {step.icon}
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-bold">{step.title}</h3>
+                                            <p className="text-muted-foreground mt-1">{step.description}</p>
+                                        </div>
+                                    </div>
+                                </Card>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
       
-       <section className="py-20 md:py-24">
+       <section className="py-20 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
             <div className="text-center">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Experience & Technology</h2>
@@ -146,7 +181,7 @@ export default function AboutPage() {
             </div>
             <div className="mt-12 flex flex-wrap justify-center gap-4">
                 {techStack.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-base px-4 py-2 rounded-md">
+                    <Badge key={tech} variant="secondary" className="text-base px-4 py-2 rounded-md transition-transform hover:scale-110">
                         {tech}
                     </Badge>
                 ))}
