@@ -29,11 +29,13 @@ export function Navbar() {
     setIsMounted(true);
   }, []);
 
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full border-b border-border/40 shadow-sm",
-      "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", // Default server style
-      isMounted && "bg-card/95 supports-[backdrop-filter]:bg-card/60" // Client-side style after mount
+      "sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm"
     )}>
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
