@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, MessageCircle, Code } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -23,9 +23,18 @@ const WHATSAPP_LINK = "https://wa.me/917042107933";
 export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-sm">
+    <header className={cn(
+      "sticky top-0 z-50 w-full border-b border-border/40 shadow-sm",
+      "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", // Default server style
+      isMounted && "bg-card/95 supports-[backdrop-filter]:bg-card/60" // Client-side style after mount
+    )}>
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Code className="h-6 w-6 text-primary" />
