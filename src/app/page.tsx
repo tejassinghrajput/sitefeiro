@@ -109,14 +109,14 @@ export default function Home() {
               💡 We’re not just another freelance dev — we’re your web partner.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {trustFeatures.map((feature, i) => (
-              <div key={i} className="flex items-start gap-4 transition-transform hover:scale-105 animate-fade-in-up" style={{animationDelay: `${i * 100}ms`}}>
+              <Card key={i} className="p-6 flex items-start gap-4 transition-transform hover:scale-105 animate-fade-in-up bg-background" style={{animationDelay: `${i * 100}ms`}}>
                 <Check className="h-7 w-7 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-foreground text-lg">{feature}</p>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
            <div className="text-center mt-16 animate-fade-in-up">
@@ -187,19 +187,21 @@ export default function Home() {
       </section>
 
       <section id="cta" className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto max-w-7xl px-4 text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl animate-fade-in-up">Ready to Launch Your Website?</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground animate-fade-in-up [animation-delay:200ms]">
-            Let's build your online presence, together. Get started today.
-          </p>
-          <div className="mt-8 flex justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-orange-500 text-white transition-transform hover:scale-105">
-              <Link href="/contact">Get Your Site Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">
-              <Link href="/pricing">View Plans</Link>
-            </Button>
-          </div>
+        <div className="container mx-auto max-w-7xl px-4">
+          <Card className="bg-card text-center p-8 md:p-12 shadow-lg">
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl animate-fade-in-up">Ready to Launch Your Website?</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground animate-fade-in-up [animation-delay:200ms]">
+              Let's build your online presence, together. Get started today.
+            </p>
+            <div className="mt-8 flex justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-orange-500 text-white transition-transform hover:scale-105">
+                <Link href="/contact">Get Your Site Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">
+                <Link href="/pricing">View Plans</Link>
+              </Button>
+            </div>
+          </Card>
         </div>
       </section>
     </div>

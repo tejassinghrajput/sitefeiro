@@ -102,15 +102,15 @@ export default function AboutPage() {
               These are the principles that guide every project we undertake.
             </p>
           </div>
-          <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value, i) => (
-              <div key={value.title} className="text-center transition-transform hover:scale-105 animate-fade-in-up" style={{ animationDelay: `${i * 150}ms`}}>
+              <Card key={value.title} className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up" style={{ animationDelay: `${i * 150}ms`}}>
                 <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                   {value.icon}
                 </div>
                 <h3 className="mt-6 font-headline text-xl font-bold">{value.title}</h3>
                 <p className="mt-2 text-muted-foreground">{value.description}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -159,28 +159,28 @@ export default function AboutPage() {
                     Our experience and carefully selected tech stack are our secret sauce for delivering quality at speed.
                 </p>
             </div>
-            <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
-                <div className="text-center animate-fade-in-up [animation-delay:100ms]">
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:100ms]">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Briefcase className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="mt-6 font-headline text-xl font-bold">Developer since 2021</h3>
                     <p className="mt-2 text-muted-foreground">Delivered landing pages, admin panels, e-commerce MVPs, portfolio sites, and booking systems.</p>
-                </div>
-                <div className="text-center animate-fade-in-up [animation-delay:200ms]">
+                </Card>
+                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:200ms]">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Globe className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="mt-6 font-headline text-xl font-bold">Global Clientele</h3>
                     <p className="mt-2 text-muted-foreground">Based in India with happy clients across the UK, and UAE.</p>
-                </div>
-                <div className="text-center animate-fade-in-up [animation-delay:300ms]">
+                </Card>
+                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:300ms]">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Rocket className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="mt-6 font-headline text-xl font-bold">Powerful Tech Stack</h3>
                      <p className="mt-2 text-muted-foreground">Using modern, reliable technologies to build high-performance websites.</p>
-                </div>
+                </Card>
             </div>
             <div className="mt-12 flex flex-wrap justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
                 {techStack.map((tech) => (
