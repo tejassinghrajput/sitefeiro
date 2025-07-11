@@ -52,7 +52,7 @@ export default function Home() {
             🚀 Mobile-Ready, SEO-Friendly, Fast Delivery — Guaranteed. Starting at just <span className="font-semibold text-foreground">₹1,000*</span>.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-orange-500 text-white transition-transform hover:scale-105">
+            <Button asChild size="lg" className="transition-transform hover:scale-105">
               <Link href="/contact">Get Your Website Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">
@@ -91,7 +91,7 @@ export default function Home() {
             </CardContent>
             <CardFooter className="flex-col gap-4 pb-8">
               <p className="font-bold text-primary text-lg">👉 Limited slots — Book yours now!</p>
-              <Button asChild size="lg" className="transition-transform hover:scale-105 bg-gradient-to-r from-primary to-orange-500 text-white">
+              <Button asChild size="lg" className="transition-transform hover:scale-105">
                 <Link href="/pricing">Claim This Deal</Link>
               </Button>
             </CardFooter>
@@ -194,7 +194,7 @@ export default function Home() {
               Let's build your online presence, together. Get started today.
             </p>
             <div className="mt-8 flex justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
-              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-orange-500 text-white transition-transform hover:scale-105">
+              <Button asChild size="lg" className="transition-transform hover:scale-105">
                 <Link href="/contact">Get Your Site Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">

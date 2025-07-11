@@ -26,7 +26,7 @@ const packages = [
     popular: false,
     badgeText: '🔥 Limited Time',
     originalPrice: null,
-    gradientButton: true,
+    solidButton: true,
   },
   {
     name: 'Starter Site',
@@ -43,7 +43,7 @@ const packages = [
     popular: false,
     badgeText: null,
     originalPrice: null,
-    gradientButton: false,
+    solidButton: false,
   },
   {
     name: 'Business Site',
@@ -60,7 +60,7 @@ const packages = [
     cta: 'Choose Business',
     popular: true,
     badgeText: '🎉 20% OFF',
-    gradientButton: true,
+    solidButton: true,
   },
   {
     name: 'Premium Custom',
@@ -77,7 +77,7 @@ const packages = [
     popular: false,
     badgeText: null,
     originalPrice: null,
-    gradientButton: false,
+    solidButton: false,
   },
 ];
 
@@ -141,7 +141,7 @@ export default function PricingPage() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild className={`w-full ${pkg.gradientButton ? 'bg-gradient-to-r from-primary to-orange-500 text-white' : ''}`} variant={pkg.gradientButton ? 'default' : 'outline'}>
+                  <Button asChild className="w-full" variant={pkg.solidButton ? 'default' : 'outline'}>
                     <Link href="/contact">{pkg.cta}</Link>
                   </Button>
                 </CardFooter>
@@ -171,7 +171,7 @@ export default function PricingPage() {
                 Tell us your goal & we’ll send you a custom quote within 2 hours.
                 </p>
                 <div className="mt-8">
-                    <Button asChild size="lg" className="bg-gradient-to-r from-primary to-orange-500 text-white transition-transform hover:scale-105">
+                    <Button asChild size="lg" className="transition-transform hover:scale-105">
                         <Link href="/contact">Request Custom Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
                     </Button>
                 </div>
@@ -186,7 +186,7 @@ export default function PricingPage() {
             We're here to help. Reach out and let's discuss your project.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-orange-500 text-white transition-transform hover:scale-105">
+            <Button asChild size="lg" className="transition-transform hover:scale-105">
               <Link href="/contact">Contact Us <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>

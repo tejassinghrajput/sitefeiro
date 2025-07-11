@@ -49,7 +49,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-2 md:flex">
           <ThemeSwitcher />
-          <Button asChild className="bg-gradient-to-r from-primary to-orange-500 text-white">
+          <Button asChild>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-4 w-4 mr-2" />
               WhatsApp
@@ -94,7 +94,7 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4 bg-gradient-to-r from-primary to-orange-500 text-white">
+                <Button asChild className="mt-4">
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     Contact on WhatsApp

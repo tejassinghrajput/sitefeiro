@@ -138,7 +138,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={form.formState.isSubmitting} className="w-full bg-gradient-to-r from-primary to-orange-500 text-white">
+        <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
           {form.formState.isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Send Message
         </Button>
