@@ -6,8 +6,9 @@ import { useState } from "react";
 import { Menu, MessageCircle, Code } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -66,6 +67,11 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[240px]">
+              <SheetHeader>
+                <SheetTitle>
+                  <VisuallyHidden>Navigation Menu</VisuallyHidden>
+                </SheetTitle>
+              </SheetHeader>
               <div className="p-4">
                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
                   <Code className="h-6 w-6 text-primary" />
