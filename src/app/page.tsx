@@ -104,7 +104,7 @@ export default function Home() {
       <section id="trust" className="py-16 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why People Choose BuildNGo</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why People Choose SiteFeiro</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
               💡 We’re not just another freelance dev — we’re your web partner.
             </p>

@@ -32,7 +32,7 @@ export function Navbar() {
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Code className="h-6 w-6 text-primary" />
-          <span className="font-headline text-xl font-bold">BuildNGo</span>
+          <span className="font-headline text-xl font-bold">SiteFeiro</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
@@ -78,7 +78,7 @@ export function Navbar() {
               <div className="p-4">
                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
                   <Code className="h-6 w-6 text-primary" />
-                  <span className="font-headline text-lg font-bold">BuildNGo</span>
+                  <span className="font-headline text-lg font-bold">SiteFeiro</span>
                 </Link>
               </div>
               <nav className="flex flex-col gap-4 p-4">

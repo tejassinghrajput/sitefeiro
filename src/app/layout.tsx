@@ -8,22 +8,22 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: {
-    default: 'BuildNGo: We build websites in 3 days — starting at ₹4,999',
-    template: '%s | BuildNGo',
+    default: 'SiteFeiro: We build websites in 3 days — starting at ₹4,999',
+    template: '%s | SiteFeiro',
   },
   description: 'Fast. Affordable. SEO-Ready. Get your professional website built by experts in just 3 days.',
   keywords: ['fast websites', 'affordable websites', 'website development', 'Next.js developer', 'React developer', 'web design India'],
   openGraph: {
-    title: 'BuildNGo: We build websites in 3 days — starting at ₹4,999',
+    title: 'SiteFeiro: We build websites in 3 days — starting at ₹4,999',
     description: 'Fast. Affordable. SEO-Ready. Get your professional website built by experts in just 3 days.',
-    url: 'https://buildngo-demo.com', // Replace with actual URL
-    siteName: 'BuildNGo',
+    url: 'https://sitefeiro-demo.com', // Replace with actual URL
+    siteName: 'SiteFeiro',
     images: [
       {
-        url: 'https://placehold.co/1200x630/2563eb/ffffff.png?text=BuildNGo', // Replace with actual OG image
+        url: 'https://placehold.co/1200x630/2563eb/ffffff.png?text=SiteFeiro', // Replace with actual OG image
         width: 1200,
         height: 630,
-        alt: 'BuildNGo - Fast Website Builder'
+        alt: 'SiteFeiro - Fast Website Builder'
       },
     ],
     locale: 'en_IN',
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BuildNGo: We build websites in 3 days — starting at ₹4,999',
+    title: 'SiteFeiro: We build websites in 3 days — starting at ₹4,999',
     description: 'Fast. Affordable. SEO-Ready. Get your professional website built by experts in just 3 days.',
-    images: ['https://placehold.co/1200x630/2563eb/ffffff.png?text=BuildNGo'], // Replace with actual OG image
+    images: ['https://placehold.co/1200x630/2563eb/ffffff.png?text=SiteFeiro'], // Replace with actual OG image
   },
   icons: {
     icon: '/favicon.ico', // Create a favicon and place it in the public folder

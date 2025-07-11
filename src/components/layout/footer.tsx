@@ -38,7 +38,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <Code className="h-8 w-8 text-primary" />
-              <span className="font-headline text-2xl font-bold">BuildNGo</span>
+              <span className="font-headline text-2xl font-bold">SiteFeiro</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Fast, affordable, and SEO-ready websites delivered in days.
@@ -102,7 +102,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} BuildNGo. All Rights Reserved. No hidden fees — ever.</p>
+          <p>&copy; {new Date().getFullYear()} SiteFeiro. All Rights Reserved. No hidden fees — ever.</p>
         </div>
       </div>
     </footer>
