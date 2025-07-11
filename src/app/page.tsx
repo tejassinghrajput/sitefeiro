@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, CheckCircle, Quote, Star, Zap, Code, Rocket } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -41,29 +40,6 @@ const services = [
     title: "Pro Custom Sites",
     description: "For businesses requiring custom functionalities, e-commerce, or unique design solutions.",
     price: "₹19,999+",
-  },
-];
-
-const portfolio = [
-  {
-    title: "E-commerce Store",
-    icon: <ECommerceIcon className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />,
-    hint: "online shop",
-  },
-  {
-    title: "Corporate Website",
-    icon: <CorporateWebsiteIcon className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />,
-    hint: "business site",
-  },
-  {
-    title: "Portfolio Showcase",
-    icon: <PortfolioShowcaseIcon className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />,
-    hint: "creative portfolio",
-  },
-  {
-    title: "SaaS Landing Page",
-    icon: <SaasLandingPageIcon className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />,
-    hint: "software startup",
   },
 ];
 
@@ -150,29 +126,6 @@ export default function Home() {
                     <Link href="/pricing">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
                   </Button>
                 </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" className="py-16 md:py-24 bg-card">
-        <div className="container mx-auto max-w-7xl px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Work</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              A glimpse into the quality and style we deliver.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {portfolio.map((item, i) => (
-              <Card key={item.title} className="overflow-hidden group animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
-                <div className="aspect-[4/3] bg-muted overflow-hidden">
-                  {item.icon}
-                </div>
-                <CardContent className="p-4 bg-background">
-                  <h3 className="font-semibold">{item.title}</h3>
-                </CardContent>
               </Card>
             ))}
           </div>
