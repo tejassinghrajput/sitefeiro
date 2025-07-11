@@ -114,7 +114,7 @@ export default function PricingPage() {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:items-start">
             {packages.map((pkg) => (
-              <Card key={pkg.name} className={`flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:scale-105 ${pkg.popular ? 'border-2 border-primary shadow-lg' : ''}`}>
+              <Card key={pkg.name} className={`flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:scale-105 ${pkg.popular ? 'border-2 border-primary shadow-lg bg-card' : 'bg-card'}`}>
                 {(pkg.popular || pkg.badgeText) && (
                   <div className={`text-center py-2 text-sm font-semibold rounded-t-lg ${pkg.popular ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'}`}>
                     {pkg.badgeText || 'Most Popular'}

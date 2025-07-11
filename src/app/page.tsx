@@ -62,9 +62,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
-          <Card className="bg-white/60 dark:bg-black/20 backdrop-blur-lg border-primary/50 shadow-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300">
+          <Card className="bg-background dark:bg-card/50 backdrop-blur-lg border-primary/20 shadow-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300">
              <div className="p-6 text-center bg-primary/10">
                 <Badge variant="secondary" className="text-base mb-4 animate-fade-in-up">🎉 Launch Offer</Badge>
                 <CardTitle className="font-headline text-3xl animate-fade-in-up [animation-delay:100ms]">Get Your Website Now @ ₹1,000*</CardTitle>

@@ -104,7 +104,7 @@ export default function AboutPage() {
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value, i) => (
-              <Card key={value.title} className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up" style={{ animationDelay: `${i * 150}ms`}}>
+              <Card key={value.title} className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up bg-background" style={{ animationDelay: `${i * 150}ms`}}>
                 <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                   {value.icon}
                 </div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24">
+      <section className="py-20 md:py-24 bg-background">
             <div className="container mx-auto max-w-4xl px-4">
                 <div className="text-center mb-16 animate-fade-in-up">
                     <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Simple 3-Step Process</h2>
@@ -133,7 +133,7 @@ export default function AboutPage() {
                                 <div className="h-4 w-4 rounded-full bg-primary ring-4 ring-background z-10"></div>
                             </div>
                             <div className="w-full md:w-1/2">
-                                <Card className="p-6 transition-transform hover:scale-105 hover:shadow-lg">
+                                <Card className="p-6 transition-transform hover:scale-105 hover:shadow-lg bg-card">
                                     <div className="flex items-center gap-4">
                                         <div className="flex justify-center items-center h-12 w-12 bg-primary/10 rounded-lg flex-shrink-0">
                                             {step.icon}
@@ -160,21 +160,21 @@ export default function AboutPage() {
                 </p>
             </div>
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:100ms]">
+                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:100ms] bg-background">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Briefcase className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="mt-6 font-headline text-xl font-bold">Developer since 2021</h3>
                     <p className="mt-2 text-muted-foreground">Delivered landing pages, admin panels, e-commerce MVPs, portfolio sites, and booking systems.</p>
                 </Card>
-                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:200ms]">
+                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:200ms] bg-background">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Globe className="h-8 w-8 text-primary"/>
                     </div>
                     <h3 className="mt-6 font-headline text-xl font-bold">Global Clientele</h3>
                     <p className="mt-2 text-muted-foreground">Based in India with happy clients across the UK, and UAE.</p>
                 </Card>
-                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:300ms]">
+                <Card className="text-center p-8 transition-transform hover:scale-105 animate-fade-in-up [animation-delay:300ms] bg-background">
                     <div className="flex justify-center items-center h-16 w-16 mx-auto bg-primary/10 rounded-lg">
                         <Rocket className="h-8 w-8 text-primary"/>
                     </div>
