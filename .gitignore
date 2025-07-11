@@ -1,14 +1,9 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See https://help.github.com/articles/ignoring-files/ for more about Ignoring files
 
 # dependencies
 /node_modules
 /.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+.pnp.js
 
 # testing
 /coverage
@@ -28,18 +23,45 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# local env files
+.env*.local
 
 # vercel
-.vercel
+.vercel/
 
 # typescript
-*.tsbuildinfo
-next-env.d.ts
+*.ts
+!*.d.ts
 
-.genkit/*
-.env*
+# Compiled output
+*.js
+!*.d.ts
 
-# firebase
-firebase-debug.log
-firestore-debug.log
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# mac
+.DS_Store
+
+# windows
+Thumbs.db
+
+# svelte
+/.svelte-kit
+
+# playwright
+/test-results/
+
+# docker
+Dockerfile.local
+
+# local build
+/dist
