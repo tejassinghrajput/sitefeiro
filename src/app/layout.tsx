@@ -8,6 +8,8 @@ import { FloatingWhatsApp } from '@/components/layout/floating-whatsapp';
 import { ThemeProvider } from '@/components/theme-provider';
 import Head from 'next/head';
 import { FRONTEND_URL } from '@/config/constants';
+import { BackToTop } from '@/components/layout/back-to-top';
+import { FloatingOfferPanel } from '@/components/layout/floating-offer-panel';
 
 export const metadata: Metadata = {
   title: {
@@ -83,6 +85,8 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-[60vh]">{children}</main>
           <FloatingWhatsApp />
+          <BackToTop />
+          <FloatingOfferPanel />
           <Footer />
           <Toaster />
         </ThemeProvider>

@@ -5,6 +5,8 @@ import { Check, ArrowRight, Handshake, ShieldCheck, ChevronRight, Sparkles } fro
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { InteractivePricingSlider } from '@/components/interactive-pricing-slider';
+import { FaqAccordion } from '@/components/faq-accordion';
 
 export const metadata: Metadata = {
   title: 'Website Pricing | SiteFeiro - Affordable Plans for All Businesses',
@@ -114,6 +116,9 @@ export default function PricingPage() {
 
       <section className="pb-20 md:pb-24">
         <div className="container mx-auto max-w-7xl px-4">
+          <div className="mb-16">
+            <InteractivePricingSlider />
+          </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:items-start">
             {packages.map((pkg) => (
               <Card key={pkg.name} className={`flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:scale-105 ${pkg.popular ? 'border-2 border-primary shadow-lg bg-card' : 'bg-card'}`}>
@@ -165,19 +170,7 @@ export default function PricingPage() {
 
       <section className="py-20 md:py-24 bg-card">
         <div className="container mx-auto max-w-4xl px-4">
-            <Card className="bg-background text-center p-8 md:p-12 shadow-lg">
-                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-                Not sure which plan fits your business?
-                </h2>
-                <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Tell us your goal & we’ll send you a custom quote within 2 hours.
-                </p>
-                <div className="mt-8">
-                    <Button asChild size="lg" className="transition-transform hover:scale-105">
-                        <Link href="/contact">Request Custom Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                    </Button>
-                </div>
-            </Card>
+            <FaqAccordion />
         </div>
       </section>
 

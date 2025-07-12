@@ -25,10 +25,20 @@ const WHATSAPP_LINK = "https://wa.me/917042107933";
 export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full border-b border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-sm"
+      "sticky top-0 z-50 w-full border-b transition-colors",
+      isScrolled ? "border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-sm" : "border-transparent bg-transparent"
     )}>
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
