@@ -1,5 +1,5 @@
-
 import type { Metadata } from 'next';
+import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Navbar } from '@/components/layout/navbar';
@@ -10,6 +10,19 @@ import Head from 'next/head';
 import { FRONTEND_URL } from '@/config/constants';
 import { BackToTop } from '@/components/layout/back-to-top';
 import { FloatingOfferPanel } from '@/components/layout/floating-offer-panel';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['600', '700', '800'],
+  variable: '--font-poppins',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -63,19 +76,13 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${poppins.variable} !scroll-smooth`} suppressHydrationWarning>
       <Head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </Head>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
-      </head>
       <body className="font-body antialiased">
         <ThemeProvider
           attribute="class"

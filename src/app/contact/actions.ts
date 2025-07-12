@@ -1,34 +1,14 @@
-"use server"
+"use server";
 
-import * as z from "zod";
+// This file is temporarily not used by the contact form
+// to simplify the application and isolate dependency issues.
+// The logic will be restored once the application is stable.
 
-const formSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  requirement: z.string(),
-  budget: z.string(),
-});
-
-export async function handleFormSubmission(values: z.infer<typeof formSchema>) {
-  const parsed = formSchema.safeParse(values);
-
-  if (!parsed.success) {
-    throw new Error("Invalid form data");
-  }
-
-  // Here you would typically send an email, save to a database, or call an external API.
-  // For this demo, we'll just log the data to the console.
-  console.log("New contact form submission:");
-  console.log("Name:", parsed.data.name);
-  console.log("Email:", parsed.data.email);
-  console.log("Budget:", parsed.data.budget);
-  console.log("Requirement:", parsed.data.requirement);
-
-  // Simulate network delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  return {
-    success: true,
-    message: "Form submitted successfully!",
-  };
+export async function handleFormSubmission(values) {
+  console.log("Form submission received:", values);
+  // In a real application, you would add logic here to:
+  // 1. Validate the data
+  // 2. Send an email notification
+  // 3. Save the data to a database
+  return { success: true };
 }

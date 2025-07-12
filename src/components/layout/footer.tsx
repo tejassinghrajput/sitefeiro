@@ -62,7 +62,7 @@ export function Footer() {
               <ul className="mt-4 space-y-2">
                 <li>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
-                    <WhatsAppIcon className="h-4 w-4" />
+                    <WhatsAppIcon className="h-4 w-4 text-green-500" />
                     <span>WhatsApp</span>
                   </a>
                 </li>

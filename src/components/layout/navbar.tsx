@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -38,7 +39,9 @@ export function Navbar() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full border-b transition-colors",
-      isScrolled ? "border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-sm" : "border-transparent bg-transparent"
+      isScrolled 
+        ? "border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60 shadow-sm" 
+        : "border-transparent bg-background"
     )}>
       <div className="container flex h-16 max-w-7xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
@@ -108,9 +111,8 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4">
+                <Button asChild className="mt-4 w-full">
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                    <WhatsAppIcon className="h-4 w-4 mr-2" />
                     Contact on WhatsApp
                   </a>
                 </Button>

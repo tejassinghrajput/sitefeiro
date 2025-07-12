@@ -5,7 +5,6 @@ import { Check, ArrowRight, Handshake, ShieldCheck, ChevronRight, Sparkles } fro
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { InteractivePricingSlider } from '@/components/interactive-pricing-slider';
 import { FaqAccordion } from '@/components/faq-accordion';
 
 export const metadata: Metadata = {
@@ -116,9 +115,6 @@ export default function PricingPage() {
 
       <section className="pb-20 md:pb-24">
         <div className="container mx-auto max-w-7xl px-4">
-          <div className="mb-16">
-            <InteractivePricingSlider />
-          </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:items-start">
             {packages.map((pkg) => (
               <Card key={pkg.name} className={`flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:scale-105 ${pkg.popular ? 'border-2 border-primary shadow-lg bg-card' : 'bg-card'}`}>

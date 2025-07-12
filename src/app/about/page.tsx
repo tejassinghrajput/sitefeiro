@@ -4,7 +4,7 @@ import { Award, HeartHandshake, Zap, Compass, PencilRuler, Rocket, Briefcase, St
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { FounderPortraitIcon } from '@/components/icons';
+import { AboutIllustration } from '@/components/illustrations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { WaveDivider } from '@/components/wave-divider';
 
@@ -87,7 +87,7 @@ export default function AboutPage() {
               </Button>
             </div>
             <div className="order-1 md:order-2 flex justify-center animate-fade-in-up [animation-delay:200ms]">
-                <FounderPortraitIcon className="w-full max-w-md h-auto rounded-lg shadow-lg transition-transform hover:scale-105" data-ai-hint="developer portrait" />
+                <AboutIllustration className="w-full max-w-md h-auto transition-transform hover:scale-105" data-ai-hint="team vision" />
             </div>
           </div>
         </div>

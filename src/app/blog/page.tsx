@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { promises as fs } from 'fs';
@@ -23,7 +22,7 @@ async function getBlogPosts() {
     filenames.map(async (filename) => {
       const filePath = path.join(postsDirectory, filename);
       const fileContents = await fs.readFile(filePath, 'utf8');
-      const { data }_matter(fileContents);
+      const { data } = matter(fileContents);
       return {
         slug: filename.replace(/\.mdx$/, ''),
         ...data,
@@ -56,7 +55,9 @@ export default async function BlogPage() {
             {posts.map((post) => (
               <Card key={post.slug} className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
                 {post.image && (
-                  <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
+                  <Link href={`/blog/${post.slug}`} className="block">
+                    <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
+                  </Link>
                 )}
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl hover:text-primary transition-colors">

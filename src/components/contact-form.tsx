@@ -23,7 +23,6 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
-import { handleFormSubmission } from "@/app/contact/actions"
 import { Loader2 } from "lucide-react"
 
 const formSchema = z.object({
@@ -53,20 +52,18 @@ export function ContactForm() {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      await handleFormSubmission(values);
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for contacting us. We will get back to you shortly.",
-      })
-      form.reset();
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request. Please try again.",
-      })
-    }
+    // Temporarily commenting out server action to isolate frontend issues.
+    // In a real app, you would send this data to a server.
+    console.log("Form values:", values);
+    
+    // Simulate an API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for contacting us. We will get back to you shortly.",
+    })
+    form.reset();
   }
 
   return (
