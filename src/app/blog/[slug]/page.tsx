@@ -33,7 +33,7 @@ export async function generateStaticParams() {
       slug: filename.replace(/\.mdx$/, ''),
     }));
   } catch (error) {
-    console.error("Could not read posts directory:", error);
+    console.error("Could not read posts directory, returning empty array:", error);
     return [];
   }
 }
