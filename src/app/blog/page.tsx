@@ -25,34 +25,34 @@ export const metadata: Metadata = {
   keywords: ['web design blog', 'SEO tips', 'digital marketing India', 'small business website advice', 'Next.js development blog'],
 };
 
-// async function getBlogPosts(): Promise<Post[]> {
-//   const postsDirectory = path.join(process.cwd(), 'src', 'app', 'blog', 'posts');
-//   try {
-//     const filenames = await fs.readdir(postsDirectory);
+async function getBlogPosts(): Promise<Post[]> {
+  const postsDirectory = path.join(process.cwd(), 'src', 'app', 'blog', 'posts');
+  try {
+    const filenames = await fs.readdir(postsDirectory);
 
-//     const posts = await Promise.all(
-//       filenames
-//         .filter((filename) => filename.endsWith('.mdx'))
-//         .map(async (filename) => {
-//           const filePath = path.join(postsDirectory, filename);
-//           const fileContents = await fs.readFile(filePath, 'utf8');
-//           const { data } = matter(fileContents);
-//           return {
-//             slug: filename.replace(/\.mdx$/, ''),
-//             ...(data as Omit<Post, 'slug'>),
-//           };
-//         })
-//     );
+    const posts = await Promise.all(
+      filenames
+        .filter((filename) => filename.endsWith('.mdx'))
+        .map(async (filename) => {
+          const filePath = path.join(postsDirectory, filename);
+          const fileContents = await fs.readFile(filePath, 'utf8');
+          const { data } = matter(fileContents);
+          return {
+            slug: filename.replace(/\.mdx$/, ''),
+            ...(data as Omit<Post, 'slug'>),
+          };
+        })
+    );
 
-//     return (posts.filter(Boolean) as Post[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-//   } catch (error) {
-//     console.error("Could not read posts directory for getBlogPosts, returning empty array:", error);
-//     return [];
-//   }
-// }
+    return (posts.filter(Boolean) as Post[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  } catch (error) {
+    console.error("Could not read posts directory for getBlogPosts, returning empty array:", error);
+    return [];
+  }
+}
 
 export default async function BlogPage() {
-  const posts: Post[] = []; // await getBlogPosts();
+  const posts: Post[] = await getBlogPosts();
 
   return (
     <div className="bg-background text-foreground">

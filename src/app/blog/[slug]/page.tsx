@@ -27,19 +27,19 @@ import { TestimonialCarousel } from '@/components/testimonial-carousel';
 
 const postsDirectory = path.join(process.cwd(), 'src', 'app', 'blog', 'posts');
 
-// export async function generateStaticParams() {
-//   try {
-//     const filenames = await fs.readdir(postsDirectory);
-//     return filenames
-//       .filter((filename) => filename.endsWith('.mdx'))
-//       .map((filename) => ({
-//         slug: filename.replace(/\.mdx$/, ''),
-//       }));
-//   } catch (error) {
-//     console.error("Could not read posts directory for generateStaticParams, returning empty array:", error);
-//     return [];
-//   }
-// }
+export async function generateStaticParams() {
+  try {
+    const filenames = await fs.readdir(postsDirectory);
+    return filenames
+      .filter((filename) => filename.endsWith('.mdx'))
+      .map((filename) => ({
+        slug: filename.replace(/\.mdx$/, ''),
+      }));
+  } catch (error) {
+    console.error("Could not read posts directory for generateStaticParams, returning empty array:", error);
+    return [];
+  }
+}
 
 async function getPost(slug: string) {
   const filePath = path.join(postsDirectory, `${slug}.mdx`);
