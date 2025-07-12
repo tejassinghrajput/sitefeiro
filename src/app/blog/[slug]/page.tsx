@@ -13,6 +13,15 @@ import { calculateReadingTime } from '@/lib/reading-time';
 import { SharePost } from '@/components/share-post';
 import { ReadingProgressBar } from '@/components/layout/reading-progress-bar';
 import { Card } from '@/components/ui/card';
+import { 
+  SeoIllustration,
+  WebSpeedIllustration,
+  BusinessGrowthIllustration,
+  OnlineWorldIllustration,
+  NextJsIllustration,
+} from '@/components/illustrations';
+import { Button } from '@/components/ui/button';
+import { TestimonialCarousel } from '@/components/testimonial-carousel';
 
 const postsDirectory = path.join(process.cwd(), 'src', 'app', 'blog', 'posts');
 
@@ -95,7 +104,18 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   const { frontmatter, content, readingTime, slug } = post;
 
-  const components = {};
+  const components = {
+    Button,
+    Link,
+    Card,
+    Badge,
+    TestimonialCarousel,
+    SeoIllustration,
+    WebSpeedIllustration,
+    BusinessGrowthIllustration,
+    OnlineWorldIllustration,
+    NextJsIllustration,
+  };
 
   const postUrl = `${FRONTEND_URL}/blog/${slug}`;
 

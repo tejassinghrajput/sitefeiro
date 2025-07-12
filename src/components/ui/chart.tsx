@@ -6,7 +6,7 @@ import * as React from "react"
 const ChartContainer = ({ children }: { children: React.ReactNode }) => <div>{children}</div>
 const ChartTooltip = () => null;
 const ChartTooltipContent = () => null;
-const ChartLegend = ()_ => null;
+const ChartLegend = () => null;
 const ChartLegendContent = () => null;
 const ChartStyle = () => null;
 
