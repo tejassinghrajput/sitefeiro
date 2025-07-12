@@ -31,21 +31,22 @@ async function getBlogPosts(): Promise<Post[]> {
     const filenames = await fs.readdir(postsDirectory);
 
     const posts = await Promise.all(
-      filenames.map(async (filename) => {
-        if (!filename.endsWith('.mdx')) return null;
-        const filePath = path.join(postsDirectory, filename);
-        const fileContents = await fs.readFile(filePath, 'utf8');
-        const { data } = matter(fileContents);
-        return {
-          slug: filename.replace(/\.mdx$/, ''),
-          ...(data as Omit<Post, 'slug'>),
-        };
-      })
+      filenames
+        .filter((filename) => filename.endsWith('.mdx'))
+        .map(async (filename) => {
+          const filePath = path.join(postsDirectory, filename);
+          const fileContents = await fs.readFile(filePath, 'utf8');
+          const { data } = matter(fileContents);
+          return {
+            slug: filename.replace(/\.mdx$/, ''),
+            ...(data as Omit<Post, 'slug'>),
+          };
+        })
     );
 
     return (posts.filter(Boolean) as Post[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } catch (error) {
-    console.error("Could not read posts directory, returning empty array:", error);
+    console.error("Could not read posts directory for getBlogPosts, returning empty array:", error);
     return [];
   }
 }
