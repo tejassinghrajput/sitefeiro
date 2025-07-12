@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { promises as fs } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -29,6 +30,7 @@ async function getBlogPosts() {
 
   const posts = await Promise.all(
     filenames.map(async (filename) => {
+      if (!filename.endsWith('.mdx')) return null;
       const filePath = path.join(postsDirectory, filename);
       const fileContents = await fs.readFile(filePath, 'utf8');
       const { data } = matter(fileContents);
@@ -39,7 +41,7 @@ async function getBlogPosts() {
     })
   );
 
-  return (posts as Post[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return (posts.filter(Boolean) as Post[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export default async function BlogPage() {
@@ -64,8 +66,14 @@ export default async function BlogPage() {
             {posts.map((post) => (
               <Card key={post.slug} className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-105">
                 {post.image && (
-                  <Link href={`/blog/${post.slug}`} className="block">
-                    <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
+                  <Link href={`/blog/${post.slug}`} className="block aspect-video relative">
+                    <Image 
+                      src={post.image} 
+                      alt={post.title} 
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover" 
+                    />
                   </Link>
                 )}
                 <CardHeader>

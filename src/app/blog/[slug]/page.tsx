@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FRONTEND_URL } from '@/config/constants';
 import { calculateReadingTime } from '@/lib/reading-time';
 import { SharePost } from '@/components/share-post';
@@ -136,13 +137,17 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             </nav>
 
             {frontmatter.image && (
-              <img 
-                src={frontmatter.image} 
-                alt={frontmatter.title} 
-                className="w-full h-auto max-h-[400px] object-cover rounded-lg shadow-lg mb-8" 
-                data-ai-hint="blog post topic"
-                loading="lazy"
-              />
+              <div className="relative w-full h-auto aspect-video mb-8">
+                <Image
+                  src={frontmatter.image} 
+                  alt={frontmatter.title} 
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                  data-ai-hint="blog post topic"
+                />
+              </div>
             )}
 
             <h1 className="font-headline text-4xl font-extrabold tracking-tight sm:text-5xl">
