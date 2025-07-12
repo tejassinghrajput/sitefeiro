@@ -51,7 +51,7 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
         </div>
         {post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
+            {post.tags.slice(0, 3).map((tag) => (
               <Badge key={tag} variant="secondary">
                 <Tag className="h-3 w-3 mr-1" />
                 {tag}

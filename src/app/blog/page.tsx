@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   keywords: ['web design blog', 'SEO tips', 'digital marketing India', 'small business website advice', 'Next.js development blog'],
 };
 
-export default async function BlogPage() {
-  const posts = await getAllPosts();
+export default function BlogPage() {
+  const posts = getAllPosts();
 
   return (
     <div className="bg-background text-foreground">

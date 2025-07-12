@@ -5,8 +5,7 @@ import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Calendar, Clock, User, Tag, Home, ChevronRight } from 'lucide-react';
 
-import { getPostBySlug, getPostSlugs, PostWithContent } from '@/lib/posts';
-import { FRONTEND_URL } from '@/config/constants';
+import { getPostBySlug, getPostSlugs } from '@/lib/posts';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -22,9 +21,15 @@ import {
 } from '@/components/illustrations';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
 
-export async function generateStaticParams() {
+const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:9002';
+
+
+export function generateStaticParams() {
   try {
-    const slugs = await getPostSlugs();
+    const slugs = getPostSlugs();
+    if (!slugs || slugs.length === 0) {
+      return [];
+    }
     return slugs;
   } catch (error) {
     console.error("Could not generate static params for blog posts:", error);
@@ -33,7 +38,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
     return {
@@ -65,8 +70,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
     notFound();
