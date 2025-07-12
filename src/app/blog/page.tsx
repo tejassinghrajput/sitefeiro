@@ -8,6 +8,15 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
+interface Post {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  tags: string[];
+  image?: string;
+}
+
 export const metadata: Metadata = {
   title: 'Blog | SiteFeiro - Web Design & SEO Insights',
   description: 'Explore the latest insights on web design, SEO, and digital marketing from the experts at SiteFeiro. Our blog provides valuable tips and strategies to help your business succeed online.',
@@ -30,11 +39,11 @@ async function getBlogPosts() {
     })
   );
 
-  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return (posts as Post[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts();
+  const posts: Post[] = await getBlogPosts();
 
   return (
     <div className="bg-background text-foreground">
