@@ -7,9 +7,11 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '@/components/ui/badge';
 
 export const metadata: Metadata = {
-  title: 'Pricing',
-  description: 'Transparent and affordable pricing plans for your next website. Choose from Starter, Business, or Pro packages.',
+  title: 'Website Pricing | SiteFeiro - Affordable Plans for All Businesses',
+  description: 'Explore transparent and affordable website pricing with SiteFeiro. From starter landing pages to custom e-commerce solutions, we offer clear, upfront costs to fit your budget and needs in India and beyond.',
+  keywords: ['website pricing India', 'affordable website cost', 'web design packages', 'e-commerce website price', 'landing page cost', 'custom website quote'],
 };
+
 
 const packages = [
   {

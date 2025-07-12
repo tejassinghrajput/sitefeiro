@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -5,6 +6,8 @@ import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { FloatingWhatsApp } from '@/components/layout/floating-whatsapp';
 import { ThemeProvider } from '@/components/theme-provider';
+import Head from 'next/head';
+import { FRONTEND_URL } from '@/config/constants';
 
 export const metadata: Metadata = {
   title: {
@@ -16,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'SiteFeiro: We build websites in 3 days — starting at ₹4,999',
     description: 'Fast. Affordable. SEO-Ready. Get your professional website built by experts in just 3 days.',
-    url: 'https://sitefeiro-demo.com', // Replace with actual URL
+    url: FRONTEND_URL, 
     siteName: 'SiteFeiro',
     images: [
       {
-        url: 'https://placehold.co/1200x630/2563eb/ffffff.png?text=SiteFeiro', // Replace with actual OG image
+        url: `${FRONTEND_URL}/og-image.png`, 
         width: 1200,
         height: 630,
         alt: 'SiteFeiro - Fast Website Builder'
@@ -33,10 +36,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SiteFeiro: We build websites in 3 days — starting at ₹4,999',
     description: 'Fast. Affordable. SEO-Ready. Get your professional website built by experts in just 3 days.',
-    images: ['https://placehold.co/1200x630/2563eb/ffffff.png?text=SiteFeiro'], // Replace with actual OG image
+    images: [`${FRONTEND_URL}/og-image.png`], 
   },
   icons: {
-    icon: '/favicon.ico', // Create a favicon and place it in the public folder
+    icon: '/favicon.ico', 
   },
 };
 
@@ -45,8 +48,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'url': FRONTEND_URL,
+    'name': 'SiteFeiro',
+    'potentialAction': {
+      '@type': 'SearchAction',
+      'target': `${FRONTEND_URL}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </Head>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -12,29 +12,29 @@ import { WaveDivider } from "@/components/wave-divider";
 
 
 const trustFeatures = [
-  "Worked with 10+ real businesses",
-  "100% custom-built designs, no templates",
-  "Free consultation before payment",
-  "Transparent process, always",
+  "Expert web design India-based team",
+  "100% custom business websites, no templates",
+  "Free consultation for your project",
+  "Transparent and fair pricing",
   "Free minor changes post-launch",
-  "Based in India, serving worldwide",
+  "Serving clients globally from India",
 ];
 
 const processSteps = [
     {
         icon: <Compass className="h-10 w-10 text-primary" />,
-        title: "1. Discovery & Strategy",
-        description: "We start by diving deep into your vision, goals, and audience. We'll define the project scope and create a clear roadmap for success.",
+        title: "1. Discovery & SEO Strategy",
+        description: "We start by understanding your business goals and target audience to create a clear roadmap for a high-ranking, custom business website.",
     },
     {
         icon: <PencilRuler className="h-10 w-10 text-primary" />,
-        title: "2. Design & Development",
-        description: "This is where the magic happens. Our team gets to work, building your website with clean code, modern design, and a sharp eye for detail.",
+        title: "2. Custom Web Design & Development",
+        description: "Our expert web design team in India crafts a fast-loading, responsive website with clean code and a modern, user-friendly interface.",
     },
     {
         icon: <Rocket className="h-10 w-10 text-primary" />,
-        title: "3. Review & Launch",
-        description: "We'll present the finished website for your feedback. After final approvals, we handle the deployment and celebrate your successful launch!",
+        title: "3. Review, SEO Optimization & Launch",
+        description: "We present the finished website for your feedback, perform final SEO optimization, and handle the deployment for a successful launch.",
     }
 ];
 
@@ -49,14 +49,14 @@ export default function Home() {
         <div className="container mx-auto max-w-7xl px-4 text-center relative">
            <TypewriterHeadline />
           <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl animate-fade-in-up [animation-delay:200ms]">
-            🚀 Mobile-Ready, SEO-Friendly, Fast Delivery — Guaranteed. Starting at just <span className="font-semibold text-foreground">₹1,000*</span>.
+            🚀 Get a high-ranking, custom business website built by experts in India. Mobile-ready, SEO-friendly, and delivered fast — guaranteed. Starting at just <span className="font-semibold text-foreground">₹1,000*</span>.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
             <Button asChild size="lg" className="transition-transform hover:scale-105">
-              <Link href="/contact">Get Your Website Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Link href="/contact">Get Your Custom Website <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">
-              <Link href="/pricing">See Pricing</Link>
+              <Link href="/pricing">See Web Design Pricing</Link>
             </Button>
           </div>
         </div>
@@ -67,32 +67,32 @@ export default function Home() {
           <Card className="bg-background dark:bg-card/50 backdrop-blur-lg border-primary/20 shadow-lg overflow-hidden transition-transform hover:scale-[1.02] duration-300">
              <div className="p-6 text-center bg-primary/10">
                 <Badge variant="secondary" className="text-base mb-4 animate-fade-in-up">🎉 Launch Offer</Badge>
-                <CardTitle className="font-headline text-3xl animate-fade-in-up [animation-delay:100ms]">Get Your Website Now @ ₹1,000*</CardTitle>
+                <CardTitle className="font-headline text-3xl animate-fade-in-up [animation-delay:100ms]">Get a Custom Business Website for ₹1,000*</CardTitle>
             </div>
             <CardContent className="pt-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div className="flex flex-col items-center animate-fade-in-up [animation-delay:200ms]">
                   <CheckCircle className="h-10 w-10 text-green-500 mb-4" />
-                  <p className="font-semibold text-lg">1-Page Business Site</p>
-                  <p className="text-sm text-muted-foreground">Perfect for showcasing your business.</p>
+                  <p className="font-semibold text-lg">1-Page Business Website</p>
+                  <p className="text-sm text-muted-foreground">Perfect for showcasing your business online.</p>
                 </div>
                 <div className="flex flex-col items-center animate-fade-in-up [animation-delay:400ms]">
                   <CheckCircle className="h-10 w-10 text-green-500 mb-4" />
-                  <p className="font-semibold text-lg">WhatsApp & Contact</p>
-                  <p className="text-sm text-muted-foreground">Easy for customers to reach you.</p>
+                  <p className="font-semibold text-lg">WhatsApp & Contact Form</p>
+                  <p className="text-sm text-muted-foreground">Easy for your customers to reach you.</p>
                 </div>
                 <div className="flex flex-col items-center animate-fade-in-up [animation-delay:600ms]">
                   <CheckCircle className="h-10 w-10 text-green-500 mb-4" />
                   <p className="font-semibold text-lg">Delivered in 48 Hours</p>
-                  <p className="text-sm text-muted-foreground">Get online faster than ever.</p>
+                  <p className="text-sm text-muted-foreground">Get your fast-loading website online quickly.</p>
                 </div>
               </div>
-              <p className="text-center text-xs text-muted-foreground mt-8">*Valid for the first 5 customers every month. Offer applies to basic landing pages only. You can upgrade later anytime.</p>
+              <p className="text-center text-xs text-muted-foreground mt-8">*Valid for the first 5 customers every month. Offer applies to basic landing pages only. You can upgrade to a full business website later.</p>
             </CardContent>
             <CardFooter className="flex-col gap-4 pb-8">
-              <p className="font-bold text-primary text-lg">👉 Limited slots — Book yours now!</p>
+              <p className="font-bold text-primary text-lg">👉 Limited slots — Book your custom website now!</p>
               <Button asChild size="lg" className="transition-transform hover:scale-105">
-                <Link href="/pricing">Claim This Deal</Link>
+                <Link href="/pricing">Claim This Web Design Deal</Link>
               </Button>
             </CardFooter>
           </Card>
@@ -104,9 +104,9 @@ export default function Home() {
       <section id="trust" className="py-16 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why People Choose SiteFeiro</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Why Choose SiteFeiro for Your Website</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              💡 We’re not just another freelance dev — we’re your web partner.
+              💡 We are a top web design company in India, dedicated to your success.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
            <div className="text-center mt-16 animate-fade-in-up">
              <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">
-                <Link href="/about">Learn More About Us</Link>
+                <Link href="/about">Learn More About Our Web Design Company</Link>
             </Button>
            </div>
         </div>
@@ -130,9 +130,9 @@ export default function Home() {
       <section id="process" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto max-w-4xl px-4">
             <div className="text-center mb-16 animate-fade-in-up">
-                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Simple 3-Step Process</h2>
+                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Simple 3-Step Web Design Process</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    From idea to launch, we make it easy and transparent.
+                    From idea to a high-ranking website, we make it easy and transparent.
                 </p>
             </div>
             <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
@@ -160,8 +160,8 @@ export default function Home() {
       <section id="social-proof" className="py-16 md:py-24 bg-card">
         <div className="container mx-auto max-w-7xl px-4">
            <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Trusted by Startups, Coaches, Clinics & Creators</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Real results from real clients.</p>
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Trusted by Businesses in India and Beyond</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">Real results from our web design clients.</p>
           </div>
            <TestimonialCarousel />
         </div>
@@ -179,7 +179,7 @@ export default function Home() {
             </div>
             <div className="flex gap-2">
               <Button asChild variant="secondary" className="transition-transform hover:scale-105 text-primary">
-                  <Link href="/pricing">Book Now</Link>
+                  <Link href="/pricing">Book Your Custom Website Now</Link>
               </Button>
             </div>
           </div>
@@ -189,16 +189,16 @@ export default function Home() {
       <section id="cta" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto max-w-7xl px-4">
           <Card className="bg-card text-center p-8 md:p-12 shadow-lg">
-            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl animate-fade-in-up">Ready to Launch Your Website?</h2>
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl animate-fade-in-up">Ready to Get a High-Ranking Website?</h2>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground animate-fade-in-up [animation-delay:200ms]">
-              Let's build your online presence, together. Get started today.
+              Let's build your online presence and grow your business together. Get started with the best web design company in India today.
             </p>
             <div className="mt-8 flex justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
               <Button asChild size="lg" className="transition-transform hover:scale-105">
-                <Link href="/contact">Get Your Site Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/contact">Get Your Custom Website <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="transition-transform hover:scale-105">
-                <Link href="/pricing">View Plans</Link>
+                <Link href="/pricing">View Web Design Plans</Link>
               </Button>
             </div>
           </Card>

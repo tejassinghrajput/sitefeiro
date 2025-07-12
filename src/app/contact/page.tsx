@@ -6,9 +6,11 @@ import { Button } from '@/components/ui/button';
 import { WhatsAppIcon } from '@/components/icons';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with BuildNGo. Contact us via WhatsApp, email, or our contact form to start your website project today.',
+  title: 'Contact SiteFeiro | Get a Free Website Quote',
+  description: 'Reach out to SiteFeiro for a free, no-obligation quote. Contact us via WhatsApp, email, or our online form to discuss your project and get a fast, affordable, and high-quality website.',
+  keywords: ['contact SiteFeiro', 'free website quote', 'website development contact', 'custom website price', 'web design India contact'],
 };
+
 
 const WHATSAPP_LINK = "https://wa.me/917042107933";
 const EMAIL = "sittefeiro@gmail.com";
