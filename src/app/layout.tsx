@@ -7,7 +7,6 @@ import { Footer } from '@/components/layout/footer';
 import { FloatingWhatsApp } from '@/components/layout/floating-whatsapp';
 import { ThemeProvider } from '@/components/theme-provider';
 import Head from 'next/head';
-import { FRONTEND_URL } from '@/config/constants';
 import { BackToTop } from '@/components/layout/back-to-top';
 import { FloatingOfferPanel } from '@/components/layout/floating-offer-panel';
 
@@ -23,6 +22,8 @@ const poppins = Poppins({
   weight: ['600', '700', '800'],
   variable: '--font-poppins',
 });
+
+const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL || 'http://localhost:9002';
 
 export const metadata: Metadata = {
   title: {
