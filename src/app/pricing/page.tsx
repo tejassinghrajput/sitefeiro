@@ -5,11 +5,14 @@ import { Check, ArrowRight, Handshake, ShieldCheck, ChevronRight, Sparkles } fro
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { FaqAccordion } from '@/components/faq-accordion';
 
 export const metadata: Metadata = {
-  title: 'Pricing',
-  description: 'Transparent and affordable pricing plans for your next website. Choose from Starter, Business, or Pro packages.',
+  title: 'Website Pricing | SiteFeiro - Affordable Plans for All Businesses',
+  description: 'Explore transparent and affordable website pricing with SiteFeiro. From starter landing pages to custom e-commerce solutions, we offer clear, upfront costs to fit your budget and needs in India and beyond.',
+  keywords: ['website pricing India', 'affordable website cost', 'web design packages', 'e-commerce website price', 'landing page cost', 'custom website quote'],
 };
+
 
 const packages = [
   {
@@ -163,19 +166,7 @@ export default function PricingPage() {
 
       <section className="py-20 md:py-24 bg-card">
         <div className="container mx-auto max-w-4xl px-4">
-            <Card className="bg-background text-center p-8 md:p-12 shadow-lg">
-                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-                Not sure which plan fits your business?
-                </h2>
-                <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Tell us your goal & we’ll send you a custom quote within 2 hours.
-                </p>
-                <div className="mt-8">
-                    <Button asChild size="lg" className="transition-transform hover:scale-105">
-                        <Link href="/contact">Request Custom Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                    </Button>
-                </div>
-            </Card>
+            <FaqAccordion />
         </div>
       </section>
 

@@ -4,13 +4,14 @@ import { Award, HeartHandshake, Zap, Compass, PencilRuler, Rocket, Briefcase, St
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { FounderPortraitIcon } from '@/components/icons';
+import { AboutIllustration } from '@/components/illustrations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { WaveDivider } from '@/components/wave-divider';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Discover the story, mission, and values behind BuildNGo. Learn why we are passionate about building fast, high-quality websites that empower businesses and creators.',
+  title: 'About SiteFeiro | Our Mission & Values',
+  description: 'Learn about the team, mission, and values that drive SiteFeiro. We are dedicated to crafting high-performance, SEO-friendly websites for businesses in India and worldwide, delivered with speed and exceptional quality.',
+  keywords: ['about SiteFeiro', 'website development India', 'fast website delivery', 'affordable web design', 'Tejas Kumar Singh developer'],
 };
 
 const values = [
@@ -62,7 +63,7 @@ export default function AboutPage() {
             We build websites that <span className="text-primary">work</span>.
           </h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl animate-fade-in-up [animation-delay:200ms]">
-             BuildNGo was founded by Tejas Kumar Singh, a full-stack web developer passionate about helping Indian & global small businesses go online quickly, professionally, and affordably.
+             SiteFeiro was founded by Tejas Kumar Singh, a full-stack web developer passionate about helping Indian & global small businesses go online quickly, professionally, and affordably.
           </p>
         </div>
       </section>
@@ -76,17 +77,17 @@ export default function AboutPage() {
                 We noticed a gap in the market: agencies were too expensive for small businesses, and freelancers were often inconsistent. So we stepped in with a simple promise: <br/> <strong className="text-foreground">"We deliver professional websites that work — in days, not weeks."</strong>
               </p>
               <p className="mt-4 text-muted-foreground">
-                Founded in 2021, BuildNGo started with a mission to empower entrepreneurs. We've seen brilliant ideas held back by slow, expensive, and complicated web development. The traditional model felt broken, catering only to large corporations.
+                Founded in 2021, SiteFeiro started with a mission to empower entrepreneurs. We've seen brilliant ideas held back by slow, expensive, and complicated web development. The traditional model felt broken, catering only to large corporations.
               </p>
               <p className="mt-4 text-muted-foreground">
-                BuildNGo is our answer. We created it to be everything we wished for as a client: incredibly fast, transparently priced, and relentlessly focused on quality. By leveraging a modern tech stack and a streamlined process, we eliminate bottlenecks and deliver exceptional websites in a fraction of the time. Our goal isn't just to build sites; it's to help you make your mark on the world.
+                SiteFeiro is our answer. We created it to be everything we wished for as a client: incredibly fast, transparently priced, and relentlessly focused on quality. By leveraging a modern tech stack and a streamlined process, we eliminate bottlenecks and deliver exceptional websites in a fraction of the time. Our goal isn't just to build sites; it's to help you make your mark on the world.
               </p>
               <Button asChild className="mt-6 transition-transform hover:scale-105" size="lg">
                 <Link href="/contact">Let's Build Together</Link>
               </Button>
             </div>
             <div className="order-1 md:order-2 flex justify-center animate-fade-in-up [animation-delay:200ms]">
-                <FounderPortraitIcon className="w-full max-w-md h-auto rounded-lg shadow-lg transition-transform hover:scale-105" data-ai-hint="developer portrait" />
+                <AboutIllustration className="w-full max-w-md h-auto transition-transform hover:scale-105" data-ai-hint="team vision" />
             </div>
           </div>
         </div>
@@ -143,7 +144,7 @@ export default function AboutPage() {
                                             <p className="text-muted-foreground mt-1">{step.description}</p>
                                         </div>
                                     </div>
-                                </Card>
+                                 </Card>
                             </div>
                         </div>
                     ))}

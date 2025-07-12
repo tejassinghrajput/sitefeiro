@@ -2,31 +2,30 @@
 
 import * as z from "zod";
 
+// This schema should be consistent with the one in the ContactForm component.
+// In a larger application, you might want to share this schema from a common file.
 const formSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  requirement: z.string(),
-  budget: z.string(),
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  requirement: z.string().min(10, {
+    message: "Please describe your requirement in at least 10 characters.",
+  }),
+  budget: z.string().nonempty({ message: "Please select a budget." }),
 });
 
 export async function handleFormSubmission(values: z.infer<typeof formSchema>) {
-  const parsed = formSchema.safeParse(values);
-
-  if (!parsed.success) {
-    throw new Error("Invalid form data");
-  }
-
-  // Here you would typically send an email, save to a database, or call an external API.
-  // For this demo, we'll just log the data to the console.
-  console.log("New contact form submission:");
-  console.log("Name:", parsed.data.name);
-  console.log("Email:", parsed.data.email);
-  console.log("Budget:", parsed.data.budget);
-  console.log("Requirement:", parsed.data.requirement);
-
-  // Simulate network delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
+  console.log("Form submission received:", values);
+  // In a real application, you would add logic here to:
+  // 1. Validate the data (already done by Zod on the client-side, but good to double-check)
+  // 2. Save the data to a database
+  // 3. Send a confirmation email
+  // 4. Handle any potential errors
+  
+  // For now, we'll just return a success message.
   return {
     success: true,
     message: "Form submitted successfully!",

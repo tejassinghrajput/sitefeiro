@@ -4,11 +4,14 @@ import { Mail, Clock, ShieldCheck } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
 import { WhatsAppIcon } from '@/components/icons';
+import { ContactIllustration } from '@/components/illustrations';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with BuildNGo. Contact us via WhatsApp, email, or our contact form to start your website project today.',
+  title: 'Contact SiteFeiro | Get a Free Website Quote',
+  description: 'Reach out to SiteFeiro for a free, no-obligation quote. Contact us via WhatsApp, email, or our online form to discuss your project and get a fast, affordable, and high-quality website.',
+  keywords: ['contact SiteFeiro', 'free website quote', 'website development contact', 'custom website price', 'web design India contact'],
 };
+
 
 const WHATSAPP_LINK = "https://wa.me/917042107933";
 const EMAIL = "sittefeiro@gmail.com";
@@ -35,7 +38,9 @@ export default function ContactPage() {
               <ContactForm />
             </div>
             <div className="space-y-8">
-              <h2 className="font-headline text-2xl font-bold">Contact Information</h2>
+              <div className="hidden md:block">
+                 <ContactIllustration className="w-full h-auto" data-ai-hint="contact us" />
+              </div>
               <div className="bg-accent/10 p-6 rounded-lg">
                   <h3 className="font-headline text-lg font-semibold flex items-center gap-2">
                     <ShieldCheck className="h-5 w-5 text-primary" />
@@ -49,7 +54,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="block">
                   <Button variant="outline" className="w-full justify-start h-auto p-4 text-left">
-                    <WhatsAppIcon className="h-8 w-8 text-primary mr-4 flex-shrink-0" />
+                    <WhatsAppIcon className="h-8 w-8 text-green-500 mr-4 flex-shrink-0" />
                     <div>
                       <p className="font-semibold">WhatsApp</p>
                       <p className="text-muted-foreground">Ping us and we’ll call you back. </p>

@@ -10,7 +10,7 @@
     --card-foreground: 215 28% 17%;
     --popover: 0 0% 100%;
     --popover-foreground: 215 28% 17%;
-    --primary: 210 100% 56%;
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 210 100% 56%;
+    --ring: 221 83% 53%;
     --radius: 0.75rem;
   }
  
@@ -57,5 +57,116 @@
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  .prose {
+    @apply text-foreground max-w-none;
+  }
+  .prose h2 {
+    @apply font-headline text-3xl font-bold mt-12 mb-4 border-b pb-2;
+  }
+  .prose h3 {
+    @apply font-headline text-2xl font-bold mt-8 mb-4;
+  }
+  .prose p,
+  .prose ul,
+  .prose ol {
+    @apply text-lg leading-relaxed mb-6 text-muted-foreground;
+  }
+  .prose a {
+    @apply text-primary hover:underline;
+  }
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+  .prose code:not(in pre *) {
+    @apply bg-muted text-muted-foreground rounded-md px-2 py-1 text-sm font-mono;
+  }
+  .prose pre {
+    @apply bg-card border rounded-xl p-4 mb-6 shadow-md;
+  }
+  .prose pre code {
+    @apply text-sm;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-primary bg-card rounded-r-lg p-4 my-6 shadow;
+  }
+  .prose blockquote p {
+    @apply text-base italic;
+  }
+  .prose ul {
+    @apply list-disc list-outside pl-5;
+  }
+  .prose ol {
+    @apply list-decimal list-outside pl-5;
+  }
+  .prose img, .prose svg {
+    @apply rounded-lg shadow-lg my-8 mx-auto max-h-[400px];
+  }
+
+  .dark .prose {
+      @apply text-foreground;
+  }
+  .dark .prose p,
+  .dark .prose ul,
+  .dark .prose ol {
+      @apply text-muted-foreground;
+  }
+  .dark .prose strong {
+      @apply text-foreground;
+  }
+  .dark .prose code:not(in pre *) {
+      @apply bg-muted text-muted-foreground;
+  }
+  .dark .prose pre {
+      @apply bg-background border-border;
+  }
+  .dark .prose blockquote {
+      @apply bg-card border-primary;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
   }
 }
